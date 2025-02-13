@@ -85,6 +85,8 @@ body {
     height: 0;
     overflow: hidden;
     transition: 0.4s ease;
+    align-items: center;
+    text-align: center;
 }
 
 .header-links:nth-child(1) {
