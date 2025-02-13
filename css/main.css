@@ -15,7 +15,7 @@ body {
 
 .container {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     max-width: 500px;
 }
 
@@ -39,15 +39,15 @@ body {
 }
 
 .logo {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80px;
+    max-height: 80px;
     border-radius: 19px;
 }
 
 .logo__title {
     color: #596c66;
     font-style: italic;
-    font-size: 43px;
+    font-size: 35px;
     display: flex;
     flex-direction: column;
     letter-spacing: 1px;
@@ -144,7 +144,7 @@ label {
 /* ---------------------------- */
 
 main {
-    margin-top: 110px;
+    margin-top: 20px;
     transition: 0.3s ease;
 }
 
@@ -200,3 +200,4 @@ main {
 .mobile_input:checked~main {
     margin-top: 600px;
 }
+
