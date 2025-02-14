@@ -5,7 +5,7 @@ function openModal(img) {
     modal.style.display = "flex";
     modalImg.src = img.src;
 
-    modalImg.onwheel = function(event) {
+    modalImg.onwheel = function (event) {
         event.preventDefault();
         let scale = event.deltaY > 0 ? 0.9 : 1.1;
         modalImg.style.transform = `scale(${scale})`;
@@ -26,8 +26,8 @@ const nextBtn = document.querySelector('.next');
 let index = 0;
 
 const showSlide = (i) => {
-  index = (i + slide.length) % slide.length;
-  slides.style.transform = `translateX(-${index * 100}%)`;
+    index = (i + slide.length) % slide.length;
+    slides.style.transform = `translateX(-${index * 100}%)`;
 };
 
 const nextSlide = () => showSlide(index + 1);

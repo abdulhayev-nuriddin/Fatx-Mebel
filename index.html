@@ -12,7 +12,7 @@
 
 <body>
     <input type="checkbox" id="menu" class="mobile_input">
-    <header class="container mobile__section">
+    <header class="container mobile__section" id="header">
         <div class="logo__section">
             <img src="./images/logo.jpg" alt="" class="logo">
             <h1 class="logo__title">
@@ -25,13 +25,14 @@
             <div class="hm-line"></div>
         </label>
         <nav class="nav1">
-            <a href="#" class="header-links">Dahliz jihozlari</a>
-            <a href="#" class="header-links">Oshxona jihozlari</a>
-            <a href="#" class="header-links">Yotoqxona jihozlari</a>
-            <a href="#" class="header-links">Yotoqxona mebel garniturlari</a>
-            <a href="#" class="header-links">Dekorativ stolchalar</a>
-            <a href="#" class="header-links">Kosmetika oynalari</a>
-            <a href="#" class="header-links">Shkaf va javonlar</a>
+            <a href="#info" class="header-linkss">Biz haqimizda</a>
+            <a href="#dahliz" class="header-links">Dahliz jihozlari</a>
+            <a href="#oshxona" class="header-links">Oshxona jihozlari</a>
+            <a href="#yotoqxona" class="header-links">Yotoqxona jihozlari</a>
+            <a href="#garnitur" class="header-links">Yotoqxona mebel garniturlari</a>
+            <a href="#stolcha" class="header-links">Dekorativ stolchalar</a>
+            <a href="#oyna" class="header-links">Kosmetika oynalari</a>
+            <a href="#shkaf" class="header-links">Shkaf va javonlar</a>
         </nav>
     </header>
     <!-- ------------------------- -->
@@ -57,6 +58,160 @@
                 </div>
             </div>
         </section>
+        <section class="dahliz-section" id="dahliz">
+            <div class="container dahliz__container">
+                <h1 class="dahliz__title">
+                    Dahliz jihozlari
+                </h1>
+                <img src="./dahliz/photo_1_2025-02-13_16-12-17.jpg" alt="rasm" class="dahliz1 images"
+                    onclick="openModal(this)">
+                <img src="./dahliz/photo_2_2025-02-13_16-12-17.jpg" alt="rasm" class="dahliz1 images"
+                    onclick="openModal(this)">
+                <img src="./dahliz/photo_10_2025-02-13_16-12-17.jpg" alt="rasm" class="dahliz1 images"
+                    onclick="openModal(this)">
+            </div>
+            </div>
+        </section>
+        <!-- -------------------------------- -->
+        <section class="oshxona_section" id="oshxona">
+            <div class="container oshxona__container">
+                <h1 class="oshxona__title">
+                    Oshxona jihozlari
+                </h1>
+                <img src="./oshxona/photo_4_2025-02-13_16-20-25.jpg" alt="rasm" class="oshxona1 images"
+                    onclick="openModal(this)">
+                <img src="./oshxona/photo_2_2025-02-13_16-20-25.jpg" alt="rasm" class="oshxona1 images"
+                    onclick="openModal(this)">
+                <img src="./oshxona/photo_2_2025-02-13_16-24-48.jpg" alt="rasm" class="oshxona1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <!-- --------------------------- -->
+        <section class="yotoqxona_section" id="yotoqxona">
+            <div class="container yotoqxona__container">
+                <h1 class="yotoqxona__title">
+                    Yotoqxona jihozlari
+                </h1>
+                <img src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg" alt="rasm" class="yotoqxona1 images"
+                    onclick="openModal(this)">
+                <img src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg" alt="rasm" class="yotoqxona1 images"
+                    onclick="openModal(this)">
+                <img src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg" alt="rasm" class="yotoqxona1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <!-- ----------------------------------------------------- -->
+        <section class="garnitur_section" id="garnitur">
+            <div class="container garnitur__container">
+                <h1 class="yotoqxona__title">
+                    Yotoqxona mebel garniturlari
+                </h1>
+                <img src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg" alt="rasm" class="garnitur1 images"
+                    onclick="openModal(this)">
+                <img src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg" alt="rasm" class="garnitur1 images"
+                    onclick="openModal(this)">
+                <img src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg" alt="rasm" class="garnitur1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <section class="stolchalar_section" id="stolcha">
+            <div class="container stolchalar__container">
+                <h1 class="stolchalar__title">
+                    Dekorativ stolchalar
+                </h1>
+                <img src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg" alt="rasm" class="stolchalar1 images"
+                    onclick="openModal(this)">
+                <img src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg" alt="rasm" class="stolchalar1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <section class="oynalar_section" id="oyna">
+            <div class="container oynalar__container">
+                <h1 class="oynalar__title">
+                    Kosmetika oynalari
+                </h1>
+                <img src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg" alt="rasm" class="oynalar1 images"
+                    onclick="openModal(this)">
+                <img src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg" alt="rasm" class="oynalar1 images"
+                    onclick="openModal(this)">
+                <img src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg" alt="rasm" class="oynalar1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <section class="shkaflar_section" id="shkaf">
+            <div class="container shkaflar__container">
+                <h1 class="shkaflar__title">
+                    Shkaf va Javonlar
+                </h1>
+                <img src="./shkaf/photo_1_2025-02-13_16-19-16.jpg" alt="rasm" class="shkaflar1 images"
+                    onclick="openModal(this)">
+                <img src="./shkaf/photo_2_2025-02-13_16-23-44.jpg" alt="rasm" class="shkaflar1 images"
+                    onclick="openModal(this)">
+                <img src="./shkaf/photo_8_2025-02-13_16-23-44.jpg" alt="rasm" class="shkaflar1 images"
+                    onclick="openModal(this)">
+            </div>
+        </section>
+        <section class="info" id="info">
+            <div class="container info__container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="joylashuv"></iframe>
+                <br>
+                <br>
+                <h1 class="info__title">
+                    Biz haqimizda
+                </h1>
+                <br>
+                <p class="">
+                    Bizda tayyor mebel mahsulotlarini ishlab chiqarmaydi. <br>Barcha mahsulotlar mijozlarning individual
+                    ehtiyojlari va talablari asosida buyurtma bo‘yicha tayyorlanadi. Har bir buyurtma o‘ziga xos bo‘lib,
+                    dizayn, o‘lcham va materiallarni tanlashda mijozning istaklariga mos ravishda ishlab chiqariladi.
+                </p>
+                <br>
+                <h3 class="">
+                    Manzil: Andijon viloyati <br>
+                    Mo'ljal: Navoiy bog'ining orqasi
+                </h3>
+                <br>
+                <h3 class="">
+                    Andijon bo'ylab yetkazib berish xizmati <span class="bepul">BEPUL</span>
+                </h3>
+                <br>
+                <h3 class="">
+                    Murojaat uchun telefon:
+                </h3>
+                <a href="tel:+998334794842" class="tel">+998334794842</a>
+                <br>
+                <a href="tel:+998330794842" class="tel">+998330794842</a>
+            </div>
+        </section>
+        <footer>
+            <div class="container footer-container">
+                <h1 class="footer__title">
+                    Fatx Mebel
+                </h1>
+                <div class="footer-icon">
+                    <a href="https://t.me/universal_yt" target="_blank" class="icon telegram">
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/Fatx_mebel" class="footer-link">Telegramda kuzatib boring</a>
+                </div>
+                <br>
+                <h3 class="">
+                    Aloqa uchun telefon: <br>
+                    <a href="tel:+998330794842" class="tel">+998330794842</a> <br>
+                    <a href="tel:+998334794842" class="tel">+998334794842</a>
+                </h3>
+                <a href="#header" class="footer-link1">Bosh sahifa</a>
+                <a href="barchasi.html" class="footer-link1">Barcha mebellar</a>
+            </div>
+        </footer>
+
+        <div id="modal" onclick="closeModal(event)">
+            <span id="close">&times;</span>
+            <img id="modal-img">
+        </div>
+        </section>
     </main>
 
     <script src="./js/main.js"></script>
@@ -64,7 +219,3 @@
 </body>
 
 </html>
-<!-- <iframe
-src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
-width="auto" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-referrerpolicy="no-referrer-when-downgrade"></iframe> -->
