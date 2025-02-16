@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yotoqxona mebellari</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Barcha yotoqxona mebellari</h1>
+        <br>
+        <a href="../index.html" class="orqaga" target="_blank">Bosh sahifaga qaytish</a>
+        <br>
+        <img src="../yotoqxona/photo_1_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_1_2025-02-13_16-20-54.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_1_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_2_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_2_2025-02-13_16-20-54.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_2_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_3_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_3_2025-02-13_16-20-54.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_3_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_4_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_4_2025-02-13_16-20-54.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_4_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_5_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_5_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_6_2025-02-13_16-17-49.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_6_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_7_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_8_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_9_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <img src="../yotoqxona/photo_10_2025-02-13_16-21-36.jpg" alt="Rasm" onclick="openModal(this)">
+        <br>
+        <br>
+        <a href="../index.html" class="orqaga" target="_blank">Bosh sahifaga qaytish</a>
+        <br>
+    </div>
+
+    <div id="modal" onclick="closeModal(event)">
+        <span id="close">&times;</span>
+        <img id="modal-img">
+    </div>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 500px;
+        }
+
+        .title{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .orqaga{
+            padding: 15px 30px;
+            background-color: #987a63;
+            display: flex;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal img {
+            max-width: 90%;
+            max-height: 90%;
+            transition: transform 0.3s;
+        }
+
+        #close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+<script>
+    function openModal(img) {
+        let modal = document.getElementById("modal");
+        let modalImg = document.getElementById("modal-img");
+
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+
+        modalImg.onwheel = function (event) {
+            event.preventDefault();
+            let scale = event.deltaY > 0 ? 0.9 : 1.1;
+            modalImg.style.transform = `scale(${scale})`;
+        };
+    }
+
+    function closeModal(event) {
+        if (event.target.id === "modal" || event.target.id === "close") {
+            document.getElementById("modal").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
