@@ -37,7 +37,7 @@
         font-family: "Inter", Arial, sans-serif;
         background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
         color: #e0e0e0;
-        transition: background 0.2s ease, color 0.2s ease;
+        transition: background 0.4s ease, color 0.4s ease;
         overflow-x: hidden;
       }
 
@@ -65,6 +65,7 @@
         height: 4px;
         background: linear-gradient(90deg, #6b48ff, #00ddeb);
         z-index: 2000;
+        transition: width 0.4s ease;
       }
 
       /* Header */
@@ -76,7 +77,7 @@
         background: rgba(20, 20, 20, 0.95);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
-        transition: background 0.2s ease;
+        transition: background 0.4s ease;
       }
 
       body.light-mode header {
@@ -101,7 +102,7 @@
       .logo {
         width: 48px;
         height: 48px;
-        transition: transform 0.2s ease, filter 0.2s ease;
+        transition: transform 0.4s ease, filter 0.4s ease;
       }
 
       .logo:hover {
@@ -139,7 +140,7 @@
         gap: 5px;
         width: 32px;
         height: 32px;
-        transition: transform 0.2s ease;
+        transition: transform 0.4s ease;
       }
 
       .hm-line {
@@ -147,7 +148,7 @@
         height: 4px;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         border-radius: 2px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .mobile_input:checked ~ header .nav1 {
@@ -185,7 +186,7 @@
         height: 0;
         opacity: 0;
         transform: translateY(-100%);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -205,9 +206,9 @@
         font-weight: 600;
         padding: 12px 25px;
         border-radius: 10px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         position: relative;
-        animation: slideFromCorner 0.2s ease forwards;
+        animation: slideFromCorner 0.4s ease forwards;
         opacity: 0;
         transform: translate(-50px, -50px);
       }
@@ -257,7 +258,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        transition: width 0.2s ease;
+        transition: width 0.4s ease;
       }
 
       .header-links:hover::before,
@@ -276,7 +277,7 @@
       .header-links:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .header-links:focus {
@@ -348,7 +349,7 @@
 
       .hero-content p {
         font-size: 20px;
-        animation: slideFromBottom 0.2s ease;
+        animation: slideFromBottom 0.4s ease;
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
       }
 
@@ -382,7 +383,7 @@
 
       .slides {
         display: flex;
-        transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
 
       .slide {
@@ -390,7 +391,7 @@
         height: 300px;
         position: relative;
         transform: perspective(1000px) rotateY(0deg);
-        transition: transform 0.2s ease;
+        transition: transform 0.4s ease;
       }
 
       .slide img {
@@ -398,7 +399,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 20px;
-        transition: transform 0.2s ease, filter 0.2s ease;
+        transition: transform 0.4s ease, filter 0.4s ease;
         aspect-ratio: 4/3;
       }
 
@@ -425,7 +426,7 @@
         padding: 12px;
         cursor: pointer;
         border-radius: 50%;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         font-size: 20px;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
       }
@@ -438,7 +439,7 @@
       .button:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .button:focus {
@@ -457,7 +458,7 @@
         position: relative;
         background: url("./images/section-bg.jpg") no-repeat center/cover;
         background-attachment: fixed;
-        gap: 50px; /* Vertikal masofani oshirish */
+        gap: 50px;
       }
 
       body.light-mode section {
@@ -469,7 +470,7 @@
         font-size: 34px;
         color: #e0e0e0;
         position: relative;
-        animation: slideFromTop 0.2s ease;
+        animation: slideFromTop 0.4s ease;
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
       }
 
@@ -484,7 +485,7 @@
         gap: 20px;
         width: 100%;
         max-width: 800px;
-        margin: 30px 0; /* Vertikal masofani oshirish */
+        margin: 30px 0;
       }
 
       .gallery .zoom-container {
@@ -503,7 +504,7 @@
         height: 200px;
         object-fit: cover;
         border-radius: 15px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         aspect-ratio: 4/3;
       }
 
@@ -520,7 +521,7 @@
         text-align: center;
         opacity: 0;
         transform: translateY(100%);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       body.light-mode .gallery .zoom-container::after {
@@ -550,10 +551,10 @@
         display: inline-block;
         padding: 12px 30px;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
+        color: transparent;
         text-decoration: none;
         border-radius: 10px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         font-weight: 600;
         position: relative;
         overflow: hidden;
@@ -561,6 +562,10 @@
       }
 
       .section-link span {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         position: relative;
         z-index: 2;
       }
@@ -573,7 +578,7 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(45deg, #00ddeb, #6b48ff);
-        transition: left 0.2s ease;
+        transition: left 0.4s ease;
         z-index: 1;
       }
 
@@ -589,7 +594,7 @@
       .section-link:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .section-link:focus {
@@ -609,7 +614,7 @@
         justify-content: center;
         align-items: center;
         z-index: 2000;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.4s ease;
       }
 
       body.light-mode #modal {
@@ -621,7 +626,7 @@
         max-height: 90%;
         border-radius: 15px;
         transform: scale(1);
-        transition: transform 0.2s ease;
+        transition: transform 0.4s ease;
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
       }
 
@@ -636,7 +641,7 @@
         font-size: 35px;
         color: white;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       body.light-mode #close {
@@ -654,7 +659,7 @@
 
       #close:active {
         transform: scale(0.95);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       /* Info Section */
@@ -664,7 +669,7 @@
         padding: 40px;
         border-radius: 20px;
         box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         transform: perspective(1000px);
         width: 100%;
         max-width: 800px;
@@ -719,17 +724,22 @@
       }
 
       .tel {
-        color: #6b48ff;
-        text-decoration: none;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-size: 18px;
         display: inline-block;
         margin: 10px 0;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         position: relative;
       }
 
       body.light-mode .tel {
-        color: #2c3e50;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .tel::after {
@@ -740,7 +750,7 @@
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         bottom: -2px;
         left: 0;
-        transition: width 0.2s ease;
+        transition: width 0.4s ease;
       }
 
       .tel:hover::after {
@@ -748,13 +758,12 @@
       }
 
       .tel:hover {
-        color: #00ddeb;
         transform: translateY(-2px);
       }
 
       .tel:active {
         transform: scale(0.95);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .tel:focus {
@@ -774,13 +783,12 @@
 
       body.light-mode footer {
         background: linear-gradient(135deg, #d9e2ec, #f0f4f8);
-        color: #2c3e50;
       }
 
       .footer__title {
         font-size: 32px;
         margin-bottom: 40px;
-        animation: slideFromBottom 0.2s ease;
+        animation: slideFromBottom 0.4s ease;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         -webkit-background-clip: text;
         background-clip: text;
@@ -804,7 +812,7 @@
       .footer-icon a {
         color: white;
         font-size: 30px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         position: relative;
       }
 
@@ -824,7 +832,7 @@
         border-radius: 5px;
         font-size: 12px;
         opacity: 0;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       body.light-mode .footer-icon a::after {
@@ -844,7 +852,7 @@
 
       .footer-icon a:active {
         transform: scale(0.95);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .footer-links {
@@ -860,7 +868,7 @@
         font-size: 16px;
         padding: 12px 25px;
         border-radius: 10px;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
         z-index: 1;
@@ -883,7 +891,7 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        transition: left 0.2s ease;
+        transition: left 0.4s ease;
         z-index: 1;
       }
 
@@ -899,7 +907,7 @@
 
       .footer-links a:active {
         transform: scale(0.95);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .footer-links a:focus {
@@ -910,11 +918,20 @@
       .footer-info {
         margin-top: 30px;
         font-size: 14px;
-        color: #b0b0b0;
       }
 
-      body.light-mode .footer-info {
-        color: #34495e;
+      .footer-info p {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      body.light-mode .footer-info p {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       /* Dark Mode Toggle */
@@ -932,12 +949,12 @@
         justify-content: center;
         cursor: pointer;
         z-index: 1000;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
       }
 
       body.light-mode .mode-toggle {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
       }
 
       .mode-toggle:hover {
@@ -947,7 +964,7 @@
 
       .mode-toggle:active {
         transform: scale(0.95);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .mode-toggle:focus {
@@ -956,7 +973,7 @@
       }
 
       .mode-toggle i {
-        transition: transform 0.2s ease;
+        transition: transform 0.4s ease;
       }
 
       body.light-mode .mode-toggle i {
@@ -976,8 +993,8 @@
         justify-content: center;
         font-size: 26px;
         cursor: pointer;
-        opacity: 1; /* Doimo ko‘rinadi */
-        transition: all 0.2s ease;
+        opacity: 1;
+        transition: all 0.4s ease;
         z-index: 1000;
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
       }
@@ -996,7 +1013,7 @@
       }
 
       body.light-mode .scroll-top {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
       }
 
       .scroll-prev {
@@ -1007,7 +1024,7 @@
       }
 
       body.light-mode .scroll-prev {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
       }
 
       .scroll-next {
@@ -1018,7 +1035,7 @@
       }
 
       body.light-mode .scroll-next {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
       }
 
       .scroll-top:hover,
@@ -1033,7 +1050,7 @@
       .scroll-next:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .scroll-top:focus,
@@ -1059,12 +1076,12 @@
         font-size: 26px;
         cursor: pointer;
         z-index: 1000;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
       }
 
       body.light-mode .fab {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
       }
 
       .fab:hover {
@@ -1075,7 +1092,7 @@
       .fab:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .fab:focus {
@@ -1093,7 +1110,7 @@
         z-index: 1000;
         opacity: 0;
         transform: translateY(20px);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         pointer-events: none;
       }
 
@@ -1113,12 +1130,12 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
       }
 
       body.light-mode .fab-menu a {
-        background: linear-gradient(45deg, #2c3e50, #34495e);
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
       }
 
       .fab-menu a:hover {
@@ -1129,7 +1146,7 @@
       .fab-menu a:active {
         transform: scale(0.95);
         box-shadow: none;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       .fab-menu a:focus {
@@ -1321,44 +1338,11 @@
 
       .animate-on-scroll {
         opacity: 0;
-        transition: all 0.2s ease;
-      }
-
-      .animate-on-scroll.from-left {
-        animation: slideFromLeft 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-right {
-        animation: slideFromRight 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-top {
-        animation: slideFromTop 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-bottom {
-        animation: slideFromBottom 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-top-right {
-        animation: slideFromTopRight 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-top-left {
-        animation: slideFromTopLeft 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-bottom-right {
-        animation: slideFromBottomRight 0.2s ease forwards;
-      }
-
-      .animate-on-scroll.from-bottom-left {
-        animation: slideFromBottomLeft 0.2s ease forwards;
+        transition: all 0.4s ease;
       }
 
       .animate-on-scroll.visible {
         opacity: 1;
-        transform: translate(0, 0);
       }
 
       /* Responsive Design */
@@ -1494,8 +1478,12 @@
         <div class="hero-overlay"></div>
         <canvas id="particles"></canvas>
         <div class="hero-content">
-          <h1>Futuristik Mebel Dunyosi</h1>
-          <p>Har bir xonadon uchun noyob va zamonaviy dizaynlar!</p>
+          <h1 class="animate-on-scroll" data-direction="top">
+            Futuristik Mebel Dunyosi
+          </h1>
+          <p class="animate-on-scroll" data-direction="bottom">
+            Har bir xonadon uchun noyob va zamonaviy dizaynlar!
+          </p>
         </div>
       </section>
 
@@ -1560,13 +1548,19 @@
 
       <div class="parallax">
         <div class="parallax-overlay"></div>
-        <h2>Nafislik va sifat bir joyda!</h2>
+        <h2 class="animate-on-scroll" data-direction="top">
+          Nafislik va sifat bir joyda!
+        </h2>
       </div>
 
       <section class="info from-bottom" id="info">
-        <div class="container info__container animate-on-scroll">
-          <h2 class="section-title">Biz haqimizda</h2>
+        <div class="container info__container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Biz haqimizda
+          </h2>
           <iframe
+            class="animate-on-scroll"
+            data-direction="bottom"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
             style="border: 0"
             allowfullscreen=""
@@ -1575,47 +1569,72 @@
             class="joylashuv"
             aria-label="Fatx Mebel manzili xaritasi"
           ></iframe>
-          <p>
+          <p class="animate-on-scroll" data-direction="left">
             Bizning mebellar sizning ehtiyojlaringiz asosida maxsus
             tayyorlanadi. Har bir mahsulot o‘ziga xos dizayn, yuqori sifat va
             mukammal ishlov berish bilan ajralib turadi.
           </p>
-          <h3>Manzil: Andijon viloyati, Navoiy bog'i orqasi</h3>
-          <h3>
+          <h3 class="animate-on-scroll" data-direction="right">
+            Manzil: Andijon viloyati, Navoiy bog'i orqasi
+          </h3>
+          <h3 class="animate-on-scroll" data-direction="top-right">
             Yetkazib berish Andijon bo'ylab <span class="bepul">BEPUL</span>
           </h3>
-          <h3>Murojaat uchun:</h3>
-          <a href="tel:+998334794842" class="tel">+998 33 479 48 42</a><br />
-          <a href="tel:+998940794842" class="tel">+998 94 079 48 42</a>
+          <h3 class="animate-on-scroll" data-direction="top-left">
+            Murojaat uchun:
+          </h3>
+          <a
+            href="tel:+998334794842"
+            class="tel animate-on-scroll"
+            data-direction="bottom-left"
+            >+998 33 479 48 42</a
+          ><br />
+          <a
+            href="tel:+998940794842"
+            class="tel animate-on-scroll"
+            data-direction="bottom-right"
+            >+998 94 079 48 42</a
+          >
         </div>
       </section>
 
       <section class="dahliz-section from-left" id="dahliz">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Dahliz jihozlari</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Dahliz jihozlari
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Dahliz mebeli 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./dahliz/photo_1_2025-02-13_16-12-17.jpg"
                 alt="Zamonaviy dahliz mebeli 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Dahliz mebeli 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./dahliz/photo_2_2025-02-13_16-12-17.jpg"
                 alt="Zamonaviy dahliz mebeli 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Dahliz mebeli 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
                 alt="Zamonaviy dahliz mebeli 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Dahliz mebeli 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img
                 src=""
                 alt="Zamonaviy dahliz mebeli 4"
@@ -1623,108 +1642,150 @@
               />
             </div>
           </div>
-          <a href="./html/dahliz.html" class="section-link"
+          <a
+            href="./html/dahliz.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="oshxona-section from-right" id="oshxona">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Oshxona jihozlari</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Oshxona jihozlari
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Oshxona mebeli 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
                 alt="Oshxona mebeli 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oshxona mebeli 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./oshxona/photo_2_2025-02-13_16-20-25.jpg"
                 alt="Oshxona mebeli 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oshxona mebeli 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./oshxona/photo_2_2025-02-13_16-24-48.jpg"
                 alt="Oshxona mebeli 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oshxona mebeli 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img src="" alt="Oshxona mebeli 4" onclick="openModal(this)" />
             </div>
           </div>
-          <a href="./html/oshxona.html" class="section-link"
+          <a
+            href="./html/oshxona.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="yotoqxona-section from-bottom" id="yotoqxona">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Yotoqxona jihozlari</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Yotoqxona jihozlari
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Yotoqxona mebeli 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg"
                 alt="Yotoqxona mebeli 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Yotoqxona mebeli 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
                 alt="Yotoqxona mebeli 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Yotoqxona mebeli 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg"
                 alt="Yotoqxona mebeli 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Yotoqxona mebeli 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img src="" alt="Yotoqxona mebeli 4" onclick="openModal(this)" />
             </div>
           </div>
-          <a href="./html/yotoqxona.html" class="section-link"
+          <a
+            href="./html/yotoqxona.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="garnitur-section from-top-right" id="garnitur">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Yotoqxona garniturlari</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Yotoqxona garniturlari
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Garnitur 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg"
                 alt="Yotoqxona garnituri 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Garnitur 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg"
                 alt="Yotoqxona garnituri 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Garnitur 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg"
                 alt="Yotoqxona garnituri 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Garnitur 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img
                 src=""
                 alt="Yotoqxona garnituri 4"
@@ -1732,108 +1793,153 @@
               />
             </div>
           </div>
-          <a href="./html/garnitur.html" class="section-link"
+          <a
+            href="./html/garnitur.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="stolchalar-section from-top-left" id="stolcha">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Dekorativ stolchalar</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Dekorativ stolchalar
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Stolcha 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg"
                 alt="Dekorativ stolcha 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Stolcha 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg"
                 alt="Dekorativ stolcha 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Stolcha 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img src="" alt="Dekorativ stolcha 3" onclick="openModal(this)" />
             </div>
-            <div class="zoom-container" data-title="Stolcha 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img src="" alt="Dekorativ stolcha 4" onclick="openModal(this)" />
             </div>
           </div>
-          <a href="./html/stollar.html" class="section-link"
+          <a
+            href="./html/stollar.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="oynalar-section from-bottom-right" id="oyna">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Kosmetika oynalari</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Kosmetika oynalari
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Oyna 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
                 alt="Kosmetika oynasi 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oyna 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg"
                 alt="Kosmetika oynasi 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oyna 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg"
                 alt="Kosmetika oynasi 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Oyna 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img src="" alt="Kosmetika oynasi 4" onclick="openModal(this)" />
             </div>
           </div>
-          <a href="./html/oynalar.html" class="section-link"
+          <a
+            href="./html/oynalar.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
       </section>
 
       <section class="shkaflar-section from-bottom-left" id="shkaf">
-        <div class="container animate-on-scroll">
-          <h2 class="section-title">Shkaf va javonlar</h2>
+        <div class="container">
+          <h2 class="section-title animate-on-scroll" data-direction="top">
+            Shkaf va javonlar
+          </h2>
           <div class="gallery">
-            <div class="zoom-container" data-title="Shkaf 1">
+            <div class="zoom-container animate-on-scroll" data-direction="left">
               <img
                 src="./shkaf/photo_1_2025-02-13_16-19-16.jpg"
                 alt="Shkaf 1"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Shkaf 2">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="right"
+            >
               <img
                 src="./shkaf/photo_2_2025-02-13_16-23-44.jpg"
                 alt="Shkaf 2"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Shkaf 3">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-left"
+            >
               <img
                 src="./shkaf/photo_8_2025-02-13_16-23-44.jpg"
                 alt="Shkaf 3"
                 onclick="openModal(this)"
               />
             </div>
-            <div class="zoom-container" data-title="Shkaf 4">
+            <div
+              class="zoom-container animate-on-scroll"
+              data-direction="top-right"
+            >
               <img src="" alt="Shkaf 4" onclick="openModal(this)" />
             </div>
           </div>
-          <a href="./html/shkaf.html" class="section-link"
+          <a
+            href="./html/shkaf.html"
+            class="section-link animate-on-scroll"
+            data-direction="bottom"
             ><span>Barchasini ko'rish</span></a
           >
         </div>
@@ -1842,28 +1948,53 @@
 
     <footer>
       <div class="container footer-content">
-        <h2 class="footer__title">Fatx Mebel</h2>
+        <h2 class="footer__title animate-on-scroll" data-direction="top">
+          Fatx Mebel
+        </h2>
         <div class="footer-icon">
-          <a href="tel:+998334794842" data-tooltip="Birinchi raqam"
+          <a
+            href="tel:+998334794842"
+            data-tooltip="Birinchi raqam"
+            class="animate-on-scroll"
+            data-direction="left"
             ><i class="fas fa-phone"></i
           ></a>
-          <a href="tel:+998940794842" data-tooltip="Ikkinchi raqam"
+          <a
+            href="tel:+998940794842"
+            data-tooltip="Ikkinchi raqam"
+            class="animate-on-scroll"
+            data-direction="right"
             ><i class="fas fa-phone"></i
           ></a>
         </div>
         <div class="footer-links">
-          <a href="#header"><span>Bosh sahifa</span></a>
-          <a href="./html/barchasi.html" target="_blank"
+          <a href="#header" class="animate-on-scroll" data-direction="top-left"
+            ><span>Bosh sahifa</span></a
+          >
+          <a
+            href="./html/barchasi.html"
+            target="_blank"
+            class="animate-on-scroll"
+            data-direction="top-right"
             ><span>Barcha mebellar</span></a
           >
-          <a href="#info"><span>Biz haqimizda</span></a>
-          <a href="https://t.me/Fatx_mebel"
+          <a href="#info" class="animate-on-scroll" data-direction="bottom-left"
+            ><span>Biz haqimizda</span></a
+          >
+          <a
+            href="https://t.me/Fatx_mebel"
+            class="animate-on-scroll"
+            data-direction="bottom-right"
             ><span>Biz bilan bog'lanish</span></a
           >
         </div>
         <div class="footer-info">
-          <p>© 2025 Fatx Mebel. Barcha huquqlar himoyalangan.</p>
-          <p>Manzil: Andijon viloyati, Navoiy bog'i orqasi</p>
+          <p class="animate-on-scroll" data-direction="bottom">
+            © 2025 Fatx Mebel. Barcha huquqlar himoyalangan.
+          </p>
+          <p class="animate-on-scroll" data-direction="bottom">
+            Manzil: Andijon viloyati, Navoiy bog'i orqasi
+          </p>
         </div>
       </div>
     </footer>
@@ -1928,6 +2059,13 @@
         context.querySelector(selector);
       const $$ = (selector, context = document) =>
         Array.from(context.querySelectorAll(selector));
+
+      // Hamburger Menu Link Click to Close
+      $$(".header-links").forEach((link) => {
+        link.addEventListener("click", () => {
+          $("#menu").checked = false;
+        });
+      });
 
       // Particles Animation
       const canvas = $("#particles");
@@ -2013,255 +2151,138 @@
         });
         requestAnimationFrame(animateParticles);
       }
-
       initParticles();
       animateParticles();
 
-      // Modal Functionality
-      function openModal(img) {
-        const modal = $("#modal");
-        const modalImg = $("#modal-img");
-        let scale = 1;
+      // Slider
+      let currentSlide = 0;
+      const slides = $$(".slide");
+      const totalSlides = slides.length;
 
-        modal.style.display = "flex";
-        modal.style.opacity = "0";
-        modalImg.src = img.src;
-
-        requestAnimationFrame(() => {
-          modal.style.opacity = "1";
-          modalImg.classList.add("modal-active");
-        });
-
-        let initialDistance = 0;
-        const handleTouchZoom = (e) => {
-          if (e.touches.length === 2) {
-            e.preventDefault();
-            const touch1 = e.touches[0];
-            const touch2 = e.touches[1];
-            const distance = Math.hypot(
-              touch1.clientX - touch2.clientX,
-              touch1.clientY - touch2.clientY
-            );
-            if (initialDistance === 0) initialDistance = distance;
-            scale = Math.min(
-              Math.max(scale * (distance / initialDistance), 0.5),
-              3
-            );
-            modalImg.style.transform = `scale(${scale})`;
-          }
-        };
-
-        modalImg.addEventListener("touchstart", handleTouchZoom, {
-          passive: false,
-        });
-        modalImg.addEventListener("touchmove", handleTouchZoom, {
-          passive: false,
-        });
-        modalImg.addEventListener("touchend", () => (initialDistance = 0));
+      function updateSlider() {
+        $(".slides").style.transform = `translateX(-${currentSlide * 100}%)`;
       }
 
-      function closeModal(e) {
-        if (e.target.id === "modal" || e.target.id === "close") {
-          const modal = $("#modal");
-          const modalImg = $("#modal-img");
-          modal.style.opacity = "0";
-          modalImg.classList.remove("modal-active");
-          setTimeout(() => {
-            modal.style.display = "none";
-            modalImg.style.transform = "scale(1)";
-          }, 200); // 0.2s to match CSS transitions
+      $(".next").addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      });
+
+      $(".prev").addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      });
+
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      }, 5000);
+
+      // Modal
+      function openModal(img) {
+        $("#modal").style.display = "flex";
+        $("#modal-img").src = img.src;
+        $("#modal-img").alt = img.alt;
+        setTimeout(() => $("#modal-img").classList.add("modal-active"), 100);
+      }
+
+      function closeModal(event) {
+        if (event.target === $("#modal") || event.target === $("#close")) {
+          $("#modal-img").classList.remove("modal-active");
+          setTimeout(() => ($("#modal").style.display = "none"), 400);
         }
       }
 
-      // Slider Functionality
-      const slides = $(".slides");
-      const slideEls = $$(".slide");
-      const prevBtn = $(".prev");
-      const nextBtn = $(".next");
-      let index = 0;
-      let isDragging = false;
-      let startX = 0;
-      let autoSlide;
-
-      function showSlide(i) {
-        index = (i + slideEls.length) % slideEls.length;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        slideEls.forEach((s, idx) => {
-          s.style.transform =
-            idx === index
-              ? "perspective(1000px) rotateY(0deg)"
-              : "perspective(1000px) rotateY(20deg)";
-        });
-        slides.style.transition =
-          "transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
-      }
-
-      function nextSlide() {
-        showSlide(index + 1);
-      }
-
-      function prevSlide() {
-        showSlide(index - 1);
-      }
-
-      function startAutoSlide() {
-        autoSlide = setInterval(nextSlide, 4000);
-      }
-
-      function stopAutoSlide() {
-        clearInterval(autoSlide);
-      }
-
-      slides.addEventListener(
-        "touchstart",
-        (e) => {
-          isDragging = true;
-          startX = e.touches[0].clientX;
-          slides.style.transition = "none";
-          stopAutoSlide();
+      // Progress Bar
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollTop =
+            document.documentElement.scrollTop || document.body.scrollTop;
+          const scrollHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const scrollPercentage = (scrollTop / scrollHeight) * 100;
+          $(".progress-bar").style.width = `${scrollPercentage}%`;
         },
-        { passive: false }
+        { passive: true }
       );
 
-      slides.addEventListener(
-        "touchmove",
-        (e) => {
-          if (!isDragging) return;
-          const currentX = e.touches[0].clientX;
-          const diff = currentX - startX;
-          slides.style.transform = `translateX(${
-            -index * 100 + (diff / slides.offsetWidth) * 100
-          }%)`;
-        },
-        { passive: false }
-      );
-
-      slides.addEventListener(
-        "touchend",
-        (e) => {
-          if (!isDragging) return;
-          isDragging = false;
-          const endX = e.changedTouches[0].clientX;
-          const diff = endX - startX;
-          if (Math.abs(diff) > slides.offsetWidth / 4) {
-            diff > 0 ? prevSlide() : nextSlide();
-          } else {
-            showSlide(index);
-          }
-          startAutoSlide();
-        },
-        { passive: false }
-      );
-
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        nextSlide();
-        stopAutoSlide();
-        startAutoSlide();
-      });
-
-      startAutoSlide();
-
-      // Scroll Progress Bar
-      const progressBar = $(".progress-bar");
-      function updateProgressBar() {
-        const scrollTop = window.scrollY;
-        const docHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = `${scrollPercent}%`;
-      }
-      window.addEventListener("scroll", updateProgressBar, { passive: true });
-
-      // Dark Mode Toggle
-      function toggleDarkMode() {
-        document.body.classList.toggle("light-mode");
-        const modeIcon = $(".mode-toggle i");
-        modeIcon.classList.toggle("fa-sun");
-        modeIcon.classList.toggle("fa-moon");
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("light-mode") ? "light" : "dark"
-        );
-      }
-
-      // Load Theme
-      if (localStorage.getItem("theme") === "light") {
-        document.body.classList.add("light-mode");
-        $(".mode-toggle i").classList.replace("fa-sun", "fa-moon");
-      }
-
-      // Scroll Functions
+      // Scroll to Top
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
+      // Scroll to Previous/Next Section
+      const sections = $$("section, footer");
       function scrollToPrevSection() {
-        const sections = $$("section");
-        const scrollPos = window.scrollY + window.innerHeight / 2;
-        const currentSection = sections.findIndex(
-          (s) => s.offsetTop >= scrollPos
-        );
-        const prevSection =
-          currentSection > 0 ? sections[currentSection - 1] : sections[0];
-        window.scrollTo({ top: prevSection.offsetTop, behavior: "smooth" });
+        const scrollY = window.scrollY;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          if (sections[i].offsetTop < scrollY - 50) {
+            window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
+            break;
+          }
+        }
       }
 
       function scrollToNextSection() {
-        const sections = $$("section");
-        const scrollPos = window.scrollY + window.innerHeight / 2;
-        const currentSection = sections.findIndex(
-          (s) => s.offsetTop >= scrollPos
-        );
-        const nextSection =
-          currentSection < sections.length - 1
-            ? sections[currentSection + 1]
-            : sections[sections.length - 1];
-        window.scrollTo({ top: nextSection.offsetTop, behavior: "smooth" });
+        const scrollY = window.scrollY;
+        for (let i = 0; i < sections.length; i++) {
+          if (sections[i].offsetTop > scrollY + 50) {
+            window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
+            break;
+          }
+        }
       }
 
-      // FAB Menu Toggle
+      // Dark Mode Toggle
+      function toggleDarkMode() {
+        document.body.classList.toggle("light-mode");
+        $(".mode-toggle i").classList.toggle("fa-sun");
+        $(".mode-toggle i").classList.toggle("fa-moon");
+      }
+
+      // FAB Menu
       function toggleFabMenu() {
         const fabMenu = $(".fab-menu");
-        const fabIcon = $(".fab i");
-        fabMenu.classList.toggle("active");
-        fabIcon.classList.toggle("fa-plus");
-        fabIcon.classList.toggle("fa-times");
-        document.body.classList.toggle(
-          "no-scroll",
-          fabMenu.classList.contains("active")
-        );
+        const isActive = fabMenu.classList.toggle("active");
+        $(".fab i").classList.toggle("fa-plus", !isActive);
+        $(".fab i").classList.toggle("fa-times", isActive);
+        document.body.classList.toggle("no-scroll", isActive);
       }
 
-      // Close FAB Menu on Scroll
-      window.addEventListener("scroll", () => {
-        const fabMenu = $(".fab-menu");
-        const fabIcon = $(".fab i");
-        if (fabMenu.classList.contains("active")) {
-          fabMenu.classList.remove("active");
-          fabIcon.classList.replace("fa-times", "fa-plus");
-          document.body.classList.remove("no-scroll");
-        }
-      });
+      // Close FAB on Scroll
+      window.addEventListener(
+        "scroll",
+        () => {
+          if ($(".fab-menu").classList.contains("active")) {
+            toggleFabMenu();
+          }
+        },
+        { passive: true }
+      );
 
-      // Animate on Scroll
-      function animateOnScroll() {
-        const elements = $$(".animate-on-scroll");
-        const windowHeight = window.innerHeight;
-        elements.forEach((el) => {
+      // Scroll Animation
+      function handleScrollAnimations() {
+        $$(".animate-on-scroll").forEach((el) => {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
+          const direction = el.dataset.direction;
+          const isVisible =
+            rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+
+          if (isVisible && !el.classList.contains("visible")) {
             el.classList.add("visible");
+            el.style.animation = `slideFrom${
+              direction.charAt(0).toUpperCase() + direction.slice(1)
+            } 0.4s ease forwards`;
           }
         });
       }
-      window.addEventListener("scroll", animateOnScroll, { passive: true });
-      window.addEventListener("load", animateOnScroll);
+
+      window.addEventListener("scroll", handleScrollAnimations, {
+        passive: true,
+      });
+      window.addEventListener("load", handleScrollAnimations);
     </script>
   </body>
 </html>
