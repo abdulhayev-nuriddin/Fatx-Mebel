@@ -1,1706 +1,2278 @@
 <!DOCTYPE html>
 <html lang="uz">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Fatx Mebel - Futuristik Dizaynlar</title>
-    <link rel="shortcut icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' style='stop-color:%236b48ff;stop-opacity:1'/%3E%3Cstop offset='100%' style='stop-color:%2300ddeb;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M20 20 L40 20 A20 20 0 0 1 60 40 L60 80 L40 80 A20 20 0 0 0 20 60 Z M60 20 L80 20 L80 80 L60 60 Z' fill='url(%23grad)'/%3E%3C/svg%3E"
-        type="image/svg+xml">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Fatx Mebel - Andijon bo'ylab bepul yetkazib berish bilan zamonaviy mebel dizaynlari!"
+    />
+    <meta name="keywords" content="mebel, zamonaviy mebel, Andijon mebel, " />
+    <meta name="author" content="Abdulhayev Nuriddin, Universal Developer" />
+    <title>Designed by Universal</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            user-select: none;
-            touch-action: manipulation;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        user-select: none;
+        touch-action: manipulation;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+        color: #e0e0e0;
+        transition: background 0.5s ease, color 0.5s ease;
+        overflow-x: hidden;
+      }
+
+      body.light-mode {
+        background: linear-gradient(135deg, #e6f3ea 0%, #d4e6d9 100%);
+        color: #1a1a1a;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #6b48ff, #00ddeb);
+        z-index: 2000;
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: background 0.5s ease;
+      }
+
+      body.light-mode header {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+
+      .logo__section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        transition: transform 0.8s ease, filter 0.8s ease;
+      }
+
+      .logo:hover {
+        transform: rotateY(360deg) scale(1.2);
+        filter: drop-shadow(0 0 10px rgba(107, 72, 255, 0.5));
+      }
+
+      .logo__title {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+        font-style: italic;
+      }
+
+      body.light-mode .logo__title {
+        color: #1a1a1a;
+      }
+
+      .logo__title span {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .mobile_input {
+        display: none;
+      }
+
+      label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        transition: transform 0.8s ease;
+      }
+
+      .hm-line {
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        border-radius: 2px;
+        transition: all 0.8s ease;
+      }
+
+      .mobile_input:checked ~ header .nav1 {
+        transform: translateY(0);
+        opacity: 1;
+        height: 100vh;
+        pointer-events: auto;
+      }
+
+      .mobile_input:checked ~ header label {
+        transform: rotate(360deg);
+      }
+
+      .mobile_input:checked ~ header label .hm-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
+      }
+
+      .mobile_input:checked ~ header label .hm-line:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      .mobile_input:checked ~ header label .hm-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
+      }
+
+      .nav1 {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.98);
+        height: 0;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: all 0.8s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-top: 20px;
+        pointer-events: none;
+      }
+
+      body.light-mode .nav1 {
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .header-links {
+        text-decoration: none;
+        color: #e0e0e0;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 12px 25px;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        position: relative;
+        animation: slideFromCorner 0.8s ease forwards;
+        opacity: 0;
+        transform: translate(-50px, -50px);
+      }
+
+      body.light-mode .header-links {
+        color: #1a1a1a;
+      }
+
+      .header-links:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .header-links:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .header-links:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .header-links:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .header-links:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+
+      .header-links:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      .header-links:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+
+      .header-links:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+
+      .header-links::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.5s ease;
+      }
+
+      .header-links:hover::before,
+      .header-links.active::before {
+        width: 90%;
+      }
+
+      .header-links:hover {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+      }
+
+      .header-links:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .header-links:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: #0a0a0a;
+        overflow: hidden;
+      }
+
+      body.light-mode .hero {
+        background: #e6f3ea;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.1)
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        padding: 20px;
+        transform: perspective(1000px);
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        animation: neonGlow 1.5s ease infinite alternate;
+        text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
+        transform: perspective(1000px) rotateX(8deg);
+      }
+
+      .hero-content p {
+        font-size: 20px;
+        animation: slideFromBottom 1.5s ease;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+      }
+
+      canvas#particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      /* Slider */
+      .slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 50px 0;
+        border-radius: 20px;
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+        transform: perspective(1000px);
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 300px;
+        position: relative;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.9s ease;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        transition: transform 0.7s ease, filter 0.7s ease;
+        aspect-ratio: 4/3;
+      }
+
+      .slide:hover img {
+        transform: scale(1.2) rotateY(12deg);
+        filter: brightness(1.3);
+        box-shadow: 0 0 20px rgba(107, 72, 255, 0.6);
+      }
+
+      .buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 15px;
+      }
+
+      .button {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.5s ease;
+        font-size: 20px;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .button:hover {
+        transform: scale(1.4) rotate(360deg);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .button:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      /* Sections */
+      section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        position: relative;
+        background: url("./images/section-bg.jpg") no-repeat center/cover;
+        background-attachment: fixed;
+        gap: 30px;
+      }
+
+      body.light-mode section {
+        background: url("./images/section-bg-light.jpg") no-repeat center/cover;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 34px;
+        color: #e0e0e0;
+        position: relative;
+        animation: slideFromTop 0.9s ease;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+      }
+
+      body.light-mode .section-title {
+        color: #1a1a1a;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .gallery .zoom-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: all 0.5s ease;
+        aspect-ratio: 4/3;
+      }
+
+      .gallery .zoom-container::after {
+        content: attr(data-title);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.5s ease;
+      }
+
+      .gallery .zoom-container:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gallery .zoom-container:hover img {
+        transform: scale(1.25) rotate(4deg);
+        filter: brightness(1.2);
+      }
+
+      .gallery .zoom-container:hover {
+        box-shadow: 0 0 25px rgba(107, 72, 255, 0.7);
+      }
+
+      .section-link {
+        display: inline-block;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .section-link span {
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #00ddeb, #6b48ff);
+        transition: left 0.5s ease;
+        z-index: 1;
+      }
+
+      .section-link:hover::before {
+        left: 0;
+      }
+
+      .section-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .section-link:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .section-link:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      /* Modal */
+      #modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        transition: opacity 0.5s ease;
+      }
+
+      #modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+      }
+
+      #close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+
+      .modal-active img {
+        transform: scale(1.2);
+      }
+
+      #close:hover {
+        color: #6b48ff;
+        transform: rotateY(360deg) scale(1.4);
+      }
+
+      #close:active {
+        transform: scale(0.95);
+        transition: all 0.2s ease;
+      }
+
+      /* Info Section */
+      .info__container {
+        text-align: center;
+        background: rgba(30, 30, 30, 0.95);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+        transition: all 0.7s ease;
+        transform: perspective(1000px);
+        width: 100%;
+        max-width: 800px;
+      }
+
+      body.light-mode .info__container {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .info__container iframe {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .info__container p {
+        font-size: 16px;
+        color: #b0b0b0;
+        margin-bottom: 25px;
+        line-height: 1.8;
+        font-weight: 400;
+      }
+
+      body.light-mode .info__container p {
+        color: #34495e;
+      }
+
+      .info__container h3 {
+        font-size: 19px;
+        color: #e0e0e0;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      body.light-mode .info__container h3 {
+        color: #1a1a1a;
+      }
+
+      .bepul {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+      }
+
+      .tel {
+        color: #6b48ff;
+        text-decoration: none;
+        font-size: 18px;
+        display: inline-block;
+        margin: 10px 0;
+        transition: all 0.5s ease;
+        position: relative;
+      }
+
+      .tel::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        bottom: -2px;
+        left: 0;
+        transition: width 0.5s ease;
+      }
+
+      .tel:hover::after {
+        width: 100%;
+      }
+
+      .tel:hover {
+        color: #00ddeb;
+        transform: translateY(-2px);
+      }
+
+      .tel:active {
+        transform: scale(0.95);
+        transition: all 0.2s ease;
+      }
+
+      .tel:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body.light-mode footer {
+        background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+      }
+
+      .footer__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+        animation: slideFromBottom 0.9s ease;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .footer-icon {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-icon a {
+        color: white;
+        font-size: 30px;
+        transition: all 0.5s ease;
+        position: relative;
+      }
+
+      .footer-icon a::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #6b48ff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+
+      .footer-icon a:hover::after {
+        opacity: 1;
+        bottom: -40px;
+      }
+
+      .footer-icon a:hover {
+        color: #00ddeb;
+        transform: translateY(-5px) rotateY(360deg);
+      }
+
+      .footer-icon a:active {
+        transform: scale(0.95);
+        transition: all 0.2s ease;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 12px 25px;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .footer-links a span {
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-links a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        transition: left 0.5s ease;
+        z-index: 1;
+      }
+
+      .footer-links a:hover::before {
+        left: 0;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .footer-links a:active {
+        transform: scale(0.95);
+        transition: all 0.2s ease;
+      }
+
+      .footer-links a:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      .footer-info {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #b0b0b0;
+      }
+
+      body.light-mode .footer-info {
+        color: #34495e;
+      }
+
+      /* Dark Mode Toggle */
+      .mode-toggle {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
+        transition: all 0.5s ease;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .mode-toggle:hover {
+        transform: rotateY(360deg) scale(1.2);
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .mode-toggle:active {
+        transform: scale(0.95);
+        transition: all 0.2s ease;
+      }
+
+      .mode-toggle:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      .mode-toggle i {
+        transition: transform 0.5s ease;
+      }
+
+      body.light-mode .mode-toggle i {
+        transform: rotateY(360deg);
+      }
+
+      /* Scroll Buttons */
+      .scroll-top,
+      .scroll-prev,
+      .scroll-next {
+        position: fixed;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 1000;
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+      }
+
+      .scroll-prev {
+        bottom: 90px;
+        right: 90px;
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
+        color: white;
+      }
+
+      .scroll-next {
+        bottom: 20px;
+        right: 90px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+      }
+
+      .scroll-top.visible,
+      .scroll-prev.visible,
+      .scroll-next.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-top:hover,
+      .scroll-prev:hover,
+      .scroll-next:hover {
+        transform: translateY(-5px) scale(1.2);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .scroll-top:active,
+      .scroll-prev:active,
+      .scroll-next:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .scroll-top:focus,
+      .scroll-prev:focus,
+      .scroll-next:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      /* Floating Action Button */
+      .fab {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: all 0.5s ease;
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .fab:hover {
+        transform: rotateY(360deg) scale(1.2);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .fab:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .fab:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      .fab-menu {
+        position: fixed;
+        bottom: 160px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+        pointer-events: none;
+      }
+
+      .fab-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .fab-menu a {
+        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .fab-menu a:hover {
+        transform: scale(1.2) rotate(360deg);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .fab-menu a:active {
+        transform: scale(0.95);
+        box-shadow: none;
+        transition: all 0.2s ease;
+      }
+
+      .fab-menu a:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
+      .fab-menu a:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      .fab-menu a:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      .fab-menu a:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      /* Parallax */
+      .parallax {
+        background: url("./images/parallax-bg.jpg") no-repeat center/cover;
+        background-attachment: scroll;
+        height: 350px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        margin: 50px 0;
+      }
+
+      body.light-mode .parallax {
+        background: url("./images/parallax-bg-light.jpg") no-repeat center/cover;
+      }
+
+      .parallax-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.2)
+        );
+      }
+
+      .parallax h2 {
+        font-size: 32px;
+        z-index: 2;
+        animation: neonGlow 1.5s ease infinite alternate;
+        text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
+      }
+
+      /* Animations */
+      @keyframes slideFromCorner {
+        from {
+          opacity: 0;
+          transform: translate(-100px, -100px);
         }
 
-        html {
-            scroll-behavior: smooth;
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes slideFromRight {
+        from {
+          opacity: 0;
+          transform: translateX(100px);
         }
 
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
-            transition: background 0.5s ease, color 0.5s ease;
-            overflow-x: hidden;
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideFromLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
         }
 
-        body.dark-mode {
-            background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-            color: #e0e0e0;
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-100px);
         }
 
-        .container {
-            max-width: 100%;
-            padding: 0 15px;
-            margin: 0 auto;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromBottom {
+        from {
+          opacity: 0;
+          transform: translateY(100px);
         }
 
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6b48ff, #00ddeb);
-            z-index: 2000;
-            /* transition: width 0.3s ease; */
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromTopRight {
+        from {
+          opacity: 0;
+          transform: translate(100px, -100px);
         }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            transition: background 0.5s ease;
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes slideFromTopLeft {
+        from {
+          opacity: 0;
+          transform: translate(-100px, -100px);
         }
 
-        body.dark-mode header {
-            background: rgba(20, 20, 20, 0.95);
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes slideFromBottomRight {
+        from {
+          opacity: 0;
+          transform: translate(100px, 100px);
         }
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes slideFromBottomLeft {
+        from {
+          opacity: 0;
+          transform: translate(-100px, 100px);
         }
 
-        .logo__section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes neonGlow {
+        from {
+          text-shadow: 0 0 5px #6b48ff, 0 0 15px #00ddeb;
         }
 
-        .logo {
-            width: 48px;
-            height: 48px;
-            transition: transform 0.6s ease, filter 0.6s ease;
+        to {
+          text-shadow: 0 0 20px #6b48ff, 0 0 40px #00ddeb;
         }
+      }
 
-        .logo:hover {
-            transform: rotateY(360deg) scale(1.2);
-            filter: drop-shadow(0 0 10px rgba(107, 72, 255, 0.5));
+      .animate-on-scroll {
+        opacity: 0;
+        transition: all 0.9s ease;
+      }
+
+      .animate-on-scroll.from-left {
+        animation: slideFromLeft 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-right {
+        animation: slideFromRight 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-top {
+        animation: slideFromTop 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-bottom {
+        animation: slideFromBottom 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-top-right {
+        animation: slideFromTopRight 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-top-left {
+        animation: slideFromTopLeft 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-bottom-right {
+        animation: slideFromBottomRight 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.from-bottom-left {
+        animation: slideFromBottomLeft 0.9s ease forwards;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 600px;
         }
+      }
 
-        .logo__title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #1a1a1a;
-            font-style: italic;
-        }
-
-        body.dark-mode .logo__title {
-            color: #ffffff;
-        }
-
-        .logo__title span {
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .mobile_input {
-            display: none;
-        }
-
-        label {
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 32px;
-            height: 32px;
-            transition: transform 0.6s ease;
-        }
-
-        .hm-line {
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            border-radius: 2px;
-            transition: all 0.6s ease;
-        }
-
-        .mobile_input:checked~header .nav1 {
-            transform: translateY(0);
-            opacity: 1;
-            height: 100vh;
-        }
-
-        .mobile_input:checked~header label {
-            transform: rotate(360deg);
-        }
-
-        .mobile_input:checked~header label .hm-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-            background: linear-gradient(45deg, #ff2e63, #00ddeb);
-        }
-
-        .mobile_input:checked~header label .hm-line:nth-child(2) {
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        .mobile_input:checked~header label .hm-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-            background: linear-gradient(45deg, #ff2e63, #00ddeb);
-        }
-
-        .nav1 {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            height: 0;
-            opacity: 0;
-            transform: translateY(-100%);
-            transition: all 0.7s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding-top: 20px;
-            pointer-events: none;
-        }
-
-        .mobile_input:checked~header .nav1 {
-            pointer-events: auto;
-        }
-
-        body.dark-mode .nav1 {
-            background: rgba(20, 20, 20, 0.98);
-        }
-
-        .header-links {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-size: 17px;
-            font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            animation: starBurst 0.5s ease forwards;
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        .header-links:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .header-links:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .header-links:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .header-links:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .header-links:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .header-links:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        .header-links:nth-child(7) {
-            animation-delay: 0.7s;
-        }
-
-        .header-links:nth-child(8) {
-            animation-delay: 0.8s;
-        }
-
-        body.dark-mode .header-links {
-            color: #e0e0e0;
-        }
-
-        .header-links::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-
-        .header-links:active {
-            background: inherit;
-            color: inherit;
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .header-links:focus {
-            outline: none;
-        }
-
-        .header-links:hover::before,
-        .header-links.active::before {
-            width: 90%;
-        }
-
-        .header-links:hover {
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1e1e1e, #3a0ca3);
-            overflow: hidden;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            padding: 20px;
-            transform: perspective(1000px);
-        }
-
+      @media (max-width: 768px) {
         .hero-content h1 {
-            font-size: 40px;
-            margin-bottom: 20px;
-            animation: neonGlow 1.3s ease infinite alternate;
-            text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
-            transform: perspective(1000px) rotateX(8deg);
+          font-size: 32px;
         }
 
         .hero-content p {
-            font-size: 20px;
-            animation: zoomIn3D 1.3s ease;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-        }
-
-        canvas#particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        /* Slider */
-        .slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin: 50px 0;
-            border-radius: 20px;
-            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-            transform: perspective(1000px);
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-
-        .slide {
-            min-width: 100%;
-            height: 300px;
-            position: relative;
-            transform: perspective(1000px) rotateY(0deg);
-            transition: transform 0.9s ease;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            transition: transform 0.7s ease, filter 0.7s ease;
-            aspect-ratio: 4/3;
-        }
-
-        .slide:hover img {
-            transform: scale(1.2) rotateY(12deg);
-            filter: brightness(1.3);
-            box-shadow: 0 0 20px rgba(107, 72, 255, 0.6);
-        }
-
-        .buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 15px;
-        }
-
-        .button {
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            border: none;
-            padding: 12px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 20px;
-            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .button:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .button:focus {
-            outline: none;
-        }
-
-        .button:hover {
-            transform: scale(1.4) rotate(360deg);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-            position: relative;
-            background: url('./images/section-bg.jpg') no-repeat center/cover;
-            background-attachment: fixed;
-        }
-
-        body.dark-mode section {
-            background: url('./images/section-bg-dark.jpg') no-repeat center/cover;
+          font-size: 18px;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 34px;
-            color: #1a1a1a;
-            margin-bottom: 50px;
-            position: relative;
-            animation: slideInLeft 0.9s ease;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
-
-        body.dark-mode .section-title {
-            color: #e0e0e0;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-        }
-
-        .section-title::after {
-            content: '';
-            width: 90px;
-            height: 5px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-
-        .section-title:hover::after {
-            width: 160px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery .zoom-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+          font-size: 28px;
         }
 
         .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            aspect-ratio: 4/3;
-        }
-
-        .gallery .zoom-container::after {
-            content: attr(data-title);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(100%);
-            transition: all 0.3s ease;
-        }
-
-        .gallery .zoom-container:hover::after {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .gallery .zoom-container:hover img {
-            transform: scale(1.25) rotate(4deg);
-            filter: brightness(1.2);
-        }
-
-        .gallery .zoom-container:hover {
-            box-shadow: 0 0 25px rgba(107, 72, 255, 0.7);
-        }
-
-        .section-link {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .section-link span {
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #00ddeb, #6b48ff);
-            transition: left 0.3s ease;
-            z-index: 1;
-        }
-
-        .section-link:hover::before {
-            left: 0;
-        }
-
-        .section-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-
-        .section-link:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .section-link:focus {
-            outline: none;
-        }
-
-        /* Modal */
-        #modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            transition: opacity 0.3s ease;
-        }
-
-        #modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 15px;
-            transform: scale(1);
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
-        }
-
-        #close {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            font-size: 35px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .modal-active img {
-            transform: scale(1.2);
-        }
-
-        #close:hover {
-            color: #6b48ff;
-            transform: rotateY(360deg) scale(1.4);
-        }
-
-        /* Info Section */
-        .info__container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-            transition: all 0.7s ease;
-            transform: perspective(1000px);
-        }
-
-        body.dark-mode .info__container {
-            background: rgba(30, 30, 30, 0.95);
+          height: 180px;
         }
 
         .info__container iframe {
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+          height: 200px;
         }
 
-        .info__container p {
-            font-size: 16px;
-            color: #34495e;
-            margin-bottom: 25px;
-            line-height: 1.8;
-            font-weight: 400;
+        .gallery {
+          max-width: 500px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 28px;
         }
 
-        body.dark-mode .info__container p {
-            color: #b0b0b0;
+        .hero-content p {
+          font-size: 16px;
         }
 
-        .info__container h3 {
-            font-size: 19px;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 600;
+        .section-title {
+          font-size: 24px;
         }
 
-        body.dark-mode .info__container h3 {
-            color: #e0e0e0;
+        .gallery img {
+          height: 150px;
         }
 
-        .bepul {
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
+        .info__container {
+          padding: 20px;
         }
 
-        .tel {
-            color: #6b48ff;
-            text-decoration: none;
-            font-size: 18px;
-            display: inline-block;
-            margin: 10px 0;
-            transition: all 0.3s ease;
-            position: relative;
+        .gallery {
+          max-width: 100%;
         }
 
-        .tel::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            bottom: -2px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .tel:hover::after {
-            width: 100%;
-        }
-
-        .tel:hover {
-            color: #00ddeb;
-            transform: translateY(-2px);
-        }
-
-        .tel:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .tel:focus {
-            outline: none;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        body.dark-mode footer {
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-        }
-
-        .footer__title {
-            font-size: 28px;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.9s ease;
-        }
-
-        .footer-icon {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-icon a {
-            color: white;
-            font-size: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .footer-icon a::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #6b48ff;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .footer-icon a:hover::after {
-            opacity: 1;
-            bottom: -40px;
-        }
-
-        .footer-icon a:hover {
-            color: #00ddeb;
-            transform: translateY(-5px) rotateY(360deg);
-        }
-
-        .footer-icon a:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .footer-icon a:focus {
-            outline: none;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 12px 25px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .footer-links a span {
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            transition: left 0.3s ease;
-            z-index: 1;
-        }
-
-        .footer-links a:hover::before {
-            left: 0;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .footer-links a:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .footer-links a:focus {
-            outline: none;
-        }
-
-        /* Dark Mode Toggle */
+        .scroll-top,
+        .scroll-prev,
+        .scroll-next,
+        .fab,
         .mode-toggle {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+          width: 45px;
+          height: 45px;
+          font-size: 20px;
         }
 
-        .mode-toggle:hover {
-            transform: rotateY(360deg) scale(1.2);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        .scroll-next {
+          right: 80px;
         }
 
-        .mode-toggle:active {
-            transform: scale(0.95);
-            box-shadow: none;
+        .scroll-prev {
+          right: 80px;
         }
-
-        .mode-toggle:focus {
-            outline: none;
-        }
-
-        .mode-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        body.dark-mode .mode-toggle i {
-            transform: rotateY(360deg);
-        }
-
-        /* Scroll to Top */
-        .scroll-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px) scale(1.2);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .scroll-top:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .scroll-top:focus {
-            outline: none;
-        }
-
-        /* Floating Action Button */
-        .fab {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .fab:hover {
-            transform: rotateY(360deg) scale(1.2);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .fab:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .fab:focus {
-            outline: none;
-        }
-
-        .fab-menu {
-            position: fixed;
-            bottom: 160px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            pointer-events: none;
-        }
-
-        .fab-menu.active {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .fab-menu a {
-            background: linear-gradient(45deg, #6b48ff, #00ddeb);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .fab-menu a:hover {
-            transform: scale(1.2) rotate(360deg);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .fab-menu a:active {
-            transform: scale(0.95);
-            box-shadow: none;
-        }
-
-        .fab-menu a:focus {
-            outline: none;
-        }
-
-        .fab-menu a:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .fab-menu a:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .fab-menu a:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        /* Parallax */
-        .parallax {
-            background: url('./images/parallax-bg.jpg') no-repeat center/cover;
-            background-attachment: scroll;
-            height: 350px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        body.dark-mode .parallax {
-            background: url('./images/parallax-bg-dark.jpg') no-repeat center/cover;
-        }
-
-        .parallax-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
-        }
-
-        .parallax h2 {
-            font-size: 32px;
-            z-index: 2;
-            animation: neonGlow 1.3s ease infinite alternate;
-            text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-60px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes starBurst {
-            from {
-                opacity: 0;
-                transform: scale(0) rotate(360deg);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0);
-            }
-        }
-
-        @keyframes zoomIn3D {
-            from {
-                opacity: 0;
-                transform: perspective(1000px) translateZ(-200px) rotateX(20deg);
-            }
-
-            to {
-                opacity: 1;
-                transform: perspective(1000px) translateZ(0) rotateX(0);
-            }
-        }
-
-        @keyframes neonGlow {
-            from {
-                text-shadow: 0 0 5px #6b48ff, 0 0 15px #00ddeb;
-            }
-
-            to {
-                text-shadow: 0 0 20px #6b48ff, 0 0 40px #00ddeb;
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transition: all 0.9s ease;
-        }
-
-        .animate-on-scroll.from-left {
-            transform: translateX(-60px);
-        }
-
-        .animate-on-scroll.from-right {
-            transform: translateX(60px);
-        }
-
-        .animate-on-scroll.from-bottom {
-            transform: translateY(60px);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateX(0) translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-            .hero-content p {
-                font-size: 18px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .gallery img {
-                height: 180px;
-            }
-
-            .info__container iframe {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 28px;
-            }
-
-            .hero-content p {
-                font-size: 16px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .gallery img {
-                height: 150px;
-            }
-
-            .info__container {
-                padding: 20px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body class="dark-mode">
     <div class="progress-bar"></div>
-    <input type="checkbox" id="menu" class="mobile_input">
+    <input type="checkbox" id="menu" class="mobile_input" />
     <header>
-        <div class="container header-content">
-            <div class="logo__section" onclick="scrollToTop()">
-                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <defs>
-                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#6b48ff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00ddeb;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="M20 20 L40 20 A20 20 0 0 1 60 40 L60 80 L40 80 A20 20 0 0 0 20 60 Z M60 20 L80 20 L80 80 L60 60 Z"
-                        fill="url(#grad)" />
-                </svg>
-                <h1 class="logo__title">Fatx <span>Mebel</span></h1>
-            </div>
-            <label for="menu">
-                <div class="hm-line"></div>
-                <div class="hm-line"></div>
-                <div class="hm-line"></div>
-            </label>
-            <nav class="nav1">
-                <a href="#info" class="header-links">Biz haqimizda</a>
-                <a href="#dahliz" class="header-links">Dahliz jihozlari</a>
-                <a href="#oshxona" class="header-links">Oshxona jihozlari</a>
-                <a href="#yotoqxona" class="header-links">Yotoqxona jihozlari</a>
-                <a href="#garnitur" class="header-links">Yotoqxona garniturlari</a>
-                <a href="#stolcha" class="header-links">Dekorativ stolchalar</a>
-                <a href="#oyna" class="header-links">Kosmetika oynalari</a>
-                <a href="#shkaf" class="header-links">Shkaf va javonlar</a>
-            </nav>
+      <div class="container header-content">
+        <div class="logo__section" onclick="scrollToTop()">
+          <svg
+            class="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+          >
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: #6b48ff; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #00ddeb; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+            <path
+              d="M20 20 L40 20 A20 20 0 0 1 60 40 L60 80 L40 80 A20 20 0 0 0 20 60 Z M60 20 L80 20 L80 80 L60 60 Z"
+              fill="url(#grad)"
+            />
+          </svg>
+          <h1 class="logo__title">Fatx <span>Mebel</span></h1>
         </div>
+        <label for="menu">
+          <div class="hm-line"></div>
+          <div class="hm-line"></div>
+          <div class="hm-line"></div>
+        </label>
+        <nav class="nav1">
+          <a href="#info" class="header-links">Biz haqimizda</a>
+          <a href="#dahliz" class="header-links">Dahliz jihozlari</a>
+          <a href="#oshxona" class="header-links">Oshxona jihozlari</a>
+          <a href="#yotoqxona" class="header-links">Yotoqxona jihozlari</a>
+          <a href="#garnitur" class="header-links">Yotoqxona garniturlari</a>
+          <a href="#stolcha" class="header-links">Dekorativ stolchalar</a>
+          <a href="#oyna" class="header-links">Kosmetika oynalari</a>
+          <a href="#shkaf" class="header-links">Shkaf va javonlar</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <canvas id="particles"></canvas>
-            <div class="hero-content">
-                <h1>Futuristik Mebel Dunyosi</h1>
-                <p>Har bir xonadon uchun noyob va zamonaviy dizaynlar!</p>
-            </div>
-        </section>
-
-        <section class="slider-section">
-            <div class="container">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide">
-                            <div class="zoom-container"><img src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
-                                    alt="Zamonaviy dahliz mebeli"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="zoom-container"><img src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
-                                    alt="Kosmetika oynasi"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="zoom-container"><img src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
-                                    alt="Oshxona mebeli"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="zoom-container"><img src="./shkaf/photo_8_2025-02-13_16-19-16.jpg" alt="Shkaf">
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="zoom-container"><img src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
-                                    alt="Yotoqxona mebeli"></div>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="button prev fas fa-chevron-left"></button>
-                        <button class="button next fas fa-chevron-right"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="parallax">
-            <div class="parallax-overlay"></div>
-            <h2>Nafislik va sifat bir joyda!</h2>
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <canvas id="particles"></canvas>
+        <div class="hero-content">
+          <h1>Futuristik Mebel Dunyosi</h1>
+          <p>Har bir xonadon uchun noyob va zamonaviy dizaynlar!</p>
         </div>
+      </section>
 
-        <section class="info from-bottom" id="info">
-            <div class="container info__container animate-on-scroll">
-                <h2 class="section-title">Biz haqimizda</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    class="joylashuv"></iframe>
-                <p>Bizning mebellar sizning ehtiyojlaringiz asosida maxsus tayyorlanadi. Har bir mahsulot o‘ziga xos
-                    dizayn, yuqori sifat va mukammal ishlov berish bilan ajralib turadi.</p>
-                <h3>Manzil: Andijon viloyati, Navoiy bog'i orqasi</h3>
-                <h3>Yetkazib berish Andijon bo'ylab <span class="bepul">BEPUL</span></h3>
-                <h3>Murojaat uchun:</h3>
-                <a href="tel:+998334794842" class="tel">+998 33 479 48 42</a><br>
-                <a href="tel:+998330794842" class="tel">+998 33 079 48 42</a>
-            </div>
-        </section>
-
-        <section class="dahliz-section from-left" id="dahliz">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Dahliz jihozlari</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Dahliz mebeli 1"><img
-                            src="./dahliz/photo_1_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Dahliz mebeli 2"><img
-                            src="./dahliz/photo_2_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 2"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Dahliz mebeli 3"><img
-                            src="./dahliz/photo_10_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 3"
-                            onclick="openModal(this)"></div>
+      <section class="slider-section">
+        <div class="container">
+          <div class="slider">
+            <div class="slides">
+              <div class="slide">
+                <div class="zoom-container">
+                  <img
+                    src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
+                    alt="Zamonaviy dahliz mebeli"
+                  />
                 </div>
-                <a href="./html/dahliz.html" class="section-link"><span>Barchasini ko'rish</span></a>
-            </div>
-        </section>
-
-        <section class="oshxona-section from-right" id="oshxona">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Oshxona jihozlari</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Oshxona mebeli 1"><img
-                            src="./oshxona/photo_4_2025-02-13_16-20-25.jpg" alt="Oshxona mebeli 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Oshxona mebeli 2"><img
-                            src="./oshxona/photo_2_2025-02-13_16-20-25.jpg" alt="Oshxona mebeli 2"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Oshxona mebeli 3"><img
-                            src="./oshxona/photo_2_2025-02-13_16-24-48.jpg" alt="Oshxona mebeli 3"
-                            onclick="openModal(this)"></div>
+              </div>
+              <div class="slide">
+                <div class="zoom-container">
+                  <img
+                    src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
+                    alt="Kosmetika oynasi"
+                  />
                 </div>
-                <a href="./html/oshxona.html" class="section-link"><span>Barchasini ko'rish</span></a>
-            </div>
-        </section>
-
-        <section class="yotoqxona-section from-bottom" id="yotoqxona">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Yotoqxona jihozlari</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Yotoqxona mebeli 1"><img
-                            src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Yotoqxona mebeli 2"><img
-                            src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 2"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Yotoqxona mebeli 3"><img
-                            src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 3"
-                            onclick="openModal(this)"></div>
+              </div>
+              <div class="slide">
+                <div class="zoom-container">
+                  <img
+                    src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
+                    alt="Oshxona mebeli"
+                  />
                 </div>
-                <a href="./html/yotoqxona.html" class="section-link"><span>Barchasini ko'rish</span></a>
-            </div>
-        </section>
-
-        <section class="garnitur-section from-left" id="garnitur">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Yotoqxona garniturlari</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Garnitur 1"><img
-                            src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Garnitur 2"><img
-                            src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 2"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Garnitur 3"><img
-                            src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 3"
-                            onclick="openModal(this)"></div>
+              </div>
+              <div class="slide">
+                <div class="zoom-container">
+                  <img
+                    src="./shkaf/photo_8_2025-02-13_16-19-16.jpg"
+                    alt="Shkaf"
+                  />
                 </div>
-                <a href="./html/garnitur.html" class="section-link"><span>Barchasini ko'rish</span></a>
-            </div>
-        </section>
-
-        <section class="stolchalar-section from-right" id="stolcha">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Dekorativ stolchalar</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Stolcha 1"><img
-                            src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg" alt="Dekorativ stolcha 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Stolcha 2"><img
-                            src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg" alt="Dekorativ stolcha 2"
-                            onclick="openModal(this)"></div>
+              </div>
+              <div class="slide">
+                <div class="zoom-container">
+                  <img
+                    src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
+                    alt="Yotoqxona mebeli"
+                  />
                 </div>
-                <a href="./html/stollar.html" class="section-link"><span>Barchasini ko'rish</span></a>
+              </div>
             </div>
-        </section>
+            <div class="buttons">
+              <button
+                class="button prev fas fa-chevron-left"
+                aria-label="Oldingi slayd"
+              ></button>
+              <button
+                class="button next fas fa-chevron-right"
+                aria-label="Keyingi slayd"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="oynalar-section from-bottom" id="oyna">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Kosmetika oynalari</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Oyna 1"><img
-                            src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 1"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Oyna 2"><img
-                            src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 2"
-                            onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Oyna 3"><img
-                            src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 3"
-                            onclick="openModal(this)"></div>
-                </div>
-                <a href="./html/oynalar.html" class="section-link"><span>Barchasini ko'rish</span></a>
-            </div>
-        </section>
+      <div class="parallax">
+        <div class="parallax-overlay"></div>
+        <h2>Nafislik va sifat bir joyda!</h2>
+      </div>
 
-        <section class="shkaflar-section from-left" id="shkaf">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Shkaf va javonlar</h2>
-                <div class="gallery">
-                    <div class="zoom-container" data-title="Shkaf 1"><img src="./shkaf/photo_1_2025-02-13_16-19-16.jpg"
-                            alt="Shkaf 1" onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Shkaf 2"><img src="./shkaf/photo_2_2025-02-13_16-23-44.jpg"
-                            alt="Shkaf 2" onclick="openModal(this)"></div>
-                    <div class="zoom-container" data-title="Shkaf 3"><img src="./shkaf/photo_8_2025-02-13_16-23-44.jpg"
-                            alt="Shkaf 3" onclick="openModal(this)"></div>
-                </div>
-                <a href="./html/shkaf.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      <section class="info from-bottom" id="info">
+        <div class="container info__container animate-on-scroll">
+          <h2 class="section-title">Biz haqimizda</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="joylashuv"
+            aria-label="Fatx Mebel manzili xaritasi"
+          ></iframe>
+          <p>
+            Bizning mebellar sizning ehtiyojlaringiz asosida maxsus
+            tayyorlanadi. Har bir mahsulot o‘ziga xos dizayn, yuqori sifat va
+            mukammal ishlov berish bilan ajralib turadi.
+          </p>
+          <h3>Manzil: Andijon viloyati, Navoiy bog'i orqasi</h3>
+          <h3>
+            Yetkazib berish Andijon bo'ylab <span class="bepul">BEPUL</span>
+          </h3>
+          <h3>Murojaat uchun:</h3>
+          <a href="tel:+998334794842" class="tel">+998 33 479 48 42</a><br />
+          <a href="tel:+998940794842" class="tel">+998 94 079 48 42</a>
+        </div>
+      </section>
+
+      <section class="dahliz-section from-left" id="dahliz">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Dahliz jihozlari</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Dahliz mebeli 1">
+              <img
+                src="./dahliz/photo_1_2025-02-13_16-12-17.jpg"
+                alt="Zamonaviy dahliz mebeli 1"
+                onclick="openModal(this)"
+              />
             </div>
-        </section>
+            <div class="zoom-container" data-title="Dahliz mebeli 2">
+              <img
+                src="./dahliz/photo_2_2025-02-13_16-12-17.jpg"
+                alt="Zamonaviy dahliz mebeli 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Dahliz mebeli 3">
+              <img
+                src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
+                alt="Zamonaviy dahliz mebeli 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Dahliz mebeli 4">
+              <img
+                src=""
+                alt="Zamonaviy dahliz mebeli 4"
+                onclick="openModal(this)"
+              />
+            </div>
+          </div>
+          <a href="./html/dahliz.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="oshxona-section from-right" id="oshxona">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Oshxona jihozlari</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Oshxona mebeli 1">
+              <img
+                src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
+                alt="Oshxona mebeli 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oshxona mebeli 2">
+              <img
+                src="./oshxona/photo_2_2025-02-13_16-20-25.jpg"
+                alt="Oshxona mebeli 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oshxona mebeli 3">
+              <img
+                src="./oshxona/photo_2_2025-02-13_16-24-48.jpg"
+                alt="Oshxona mebeli 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oshxona mebeli 4">
+              <img src="" alt="Oshxona mebeli 4" onclick="openModal(this)" />
+            </div>
+          </div>
+          <a href="./html/oshxona.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="yotoqxona-section from-bottom" id="yotoqxona">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Yotoqxona jihozlari</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Yotoqxona mebeli 1">
+              <img
+                src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg"
+                alt="Yotoqxona mebeli 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Yotoqxona mebeli 2">
+              <img
+                src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
+                alt="Yotoqxona mebeli 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Yotoqxona mebeli 3">
+              <img
+                src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg"
+                alt="Yotoqxona mebeli 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Yotoqxona mebeli 4">
+              <img src="" alt="Yotoqxona mebeli 4" onclick="openModal(this)" />
+            </div>
+          </div>
+          <a href="./html/yotoqxona.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="garnitur-section from-top-right" id="garnitur">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Yotoqxona garniturlari</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Garnitur 1">
+              <img
+                src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg"
+                alt="Yotoqxona garnituri 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Garnitur 2">
+              <img
+                src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg"
+                alt="Yotoqxona garnituri 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Garnitur 3">
+              <img
+                src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg"
+                alt="Yotoqxona garnituri 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Garnitur 4">
+              <img
+                src=""
+                alt="Yotoqxona garnituri 4"
+                onclick="openModal(this)"
+              />
+            </div>
+          </div>
+          <a href="./html/garnitur.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="stolchalar-section from-top-left" id="stolcha">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Dekorativ stolchalar</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Stolcha 1">
+              <img
+                src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg"
+                alt="Dekorativ stolcha 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Stolcha 2">
+              <img
+                src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg"
+                alt="Dekorativ stolcha 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Stolcha 3">
+              <img src="" alt="Dekorativ stolcha 3" onclick="openModal(this)" />
+            </div>
+            <div class="zoom-container" data-title="Stolcha 4">
+              <img src="" alt="Dekorativ stolcha 4" onclick="openModal(this)" />
+            </div>
+          </div>
+          <a href="./html/stollar.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="oynalar-section from-bottom-right" id="oyna">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Kosmetika oynalari</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Oyna 1">
+              <img
+                src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
+                alt="Kosmetika oynasi 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oyna 2">
+              <img
+                src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg"
+                alt="Kosmetika oynasi 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oyna 3">
+              <img
+                src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg"
+                alt="Kosmetika oynasi 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Oyna 4">
+              <img src="" alt="Kosmetika oynasi 4" onclick="openModal(this)" />
+            </div>
+          </div>
+          <a href="./html/oynalar.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
+
+      <section class="shkaflar-section from-bottom-left" id="shkaf">
+        <div class="container animate-on-scroll">
+          <h2 class="section-title">Shkaf va javonlar</h2>
+          <div class="gallery">
+            <div class="zoom-container" data-title="Shkaf 1">
+              <img
+                src="./shkaf/photo_1_2025-02-13_16-19-16.jpg"
+                alt="Shkaf 1"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Shkaf 2">
+              <img
+                src="./shkaf/photo_2_2025-02-13_16-23-44.jpg"
+                alt="Shkaf 2"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Shkaf 3">
+              <img
+                src="./shkaf/photo_8_2025-02-13_16-23-44.jpg"
+                alt="Shkaf 3"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="zoom-container" data-title="Shkaf 4">
+              <img src="" alt="Shkaf 4" onclick="openModal(this)" />
+            </div>
+          </div>
+          <a href="./html/shkaf.html" class="section-link"
+            ><span>Barchasini ko'rish</span></a
+          >
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <h2 class="footer__title">Fatx Mebel</h2>
-            <div class="footer-icon">
-                <a href="tel:+998334794842" data-tooltip="Birinchi raqam"><i class="fas fa-phone"></i></a>
-                <a href="tel:+998330794842" data-tooltip="Ikkinchi raqam"><i class="fas fa-phone"></i></a>
-                <a href="https://t.me/Fatx_mebel" target="_blank" data-tooltip="Telegram"><i
-                        class="fab fa-telegram"></i></a>
-            </div>
-            <div class="footer-links">
-                <a href="#header"><span>Bosh sahifa</span></a>
-                <a href="./html/barchasi.html" target="_blank"><span>Barcha mebellar</span></a>
-                <a href="#info"><span>Biz haqimizda</span></a>
-            </div>
+      <div class="container footer-content">
+        <h2 class="footer__title">Fatx Mebel</h2>
+        <div class="footer-icon">
+          <a href="tel:+998334794842" data-tooltip="Birinchi raqam"
+            ><i class="fas fa-phone"></i
+          ></a>
+          <a href="tel:+998940794842" data-tooltip="Ikkinchi raqam"
+            ><i class="fas fa-phone"></i
+          ></a>
+          <a href="https://t.me/Fatx_mebel" data-tooltip="Telegram"
+            ><i class="fab fa-telegram"></i
+          ></a>
         </div>
+        <div class="footer-links">
+          <a href="#header"><span>Bosh sahifa</span></a>
+          <a href="./html/barchasi.html" target="_blank"
+            ><span>Barcha mebellar</span></a
+          >
+          <a href="#info"><span>Biz haqimizda</span></a>
+          <a href="https://t.me/Fatx_mebel"
+            ><span>Biz bilan bog'lanish</span></a
+          >
+        </div>
+        <div class="footer-info">
+          <p>© 2025 Fatx Mebel. Barcha huquqlar himoyalangan.</p>
+          <p>Manzil: Andijon viloyati, Navoiy bog'i orqasi</p>
+        </div>
+      </div>
     </footer>
 
     <div id="modal" onclick="closeModal(event)">
-        <span id="close">×</span>
-        <img id="modal-img">
+      <span id="close" aria-label="Modalni yopish">×</span>
+      <img id="modal-img" alt="Kattalashtirilgan rasm" />
     </div>
 
-    <div class="mode-toggle" onclick="toggleDarkMode()">
-        <i class="fas fa-moon"></i>
+    <div
+      class="mode-toggle"
+      onclick="toggleDarkMode()"
+      aria-label="Tungi/kunduzgi rejimni almashtirish"
+    >
+      <i class="fas fa-sun"></i>
     </div>
 
-    <div class="scroll-top" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
+    <div
+      class="scroll-top"
+      onclick="scrollToTop()"
+      aria-label="Yuqoriga ko'tarilish"
+    >
+      <i class="fas fa-chevron-up"></i>
     </div>
 
-    <div class="fab" onclick="toggleFabMenu()">
-        <i class="fas fa-plus"></i>
+    <div
+      class="scroll-prev"
+      onclick="scrollToPrevSection()"
+      aria-label="Oldingi bo'limga o'tish"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div
+      class="scroll-next"
+      onclick="scrollToNextSection()"
+      aria-label="Keyingi bo'limga o'tish"
+    >
+      <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <div class="fab" onclick="toggleFabMenu()" aria-label="Qo'shimcha menyu">
+      <i class="fas fa-plus"></i>
     </div>
     <div class="fab-menu">
-        <a href="tel:+998334794842"><i class="fas fa-phone"></i></a>
-        <a href="tel:+998330794842"><i class="fas fa-phone"></i></a>
-        <a href="https://t.me/Fatx_mebel"><i class="fab fa-telegram"></i></a>
+      <a
+        href="tel:+998334794842"
+        aria-label="Birinchi raqamga qo'ng'iroq qilish"
+        ><i class="fas fa-phone"></i
+      ></a>
+      <a
+        href="tel:+998940794842"
+        aria-label="Ikkinchi raqamga qo'ng'iroq qilish"
+        ><i class="fas fa-phone"></i
+      ></a>
+      <a href="https://t.me/Fatx_mebel" aria-label="Telegram orqali bog'lanish"
+        ><i class="fab fa-telegram"></i
+      ></a>
     </div>
 
     <script>
-        // Particles Animation
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
+      // Utility Functions
+      const $ = (selector, context = document) =>
+        context.querySelector(selector);
+      const $$ = (selector, context = document) =>
+        Array.from(context.querySelectorAll(selector));
+
+      // Particles Animation (Highly Optimized)
+      const canvas = $("#particles");
+      const ctx = canvas.getContext("2d", { alpha: true });
+      let particles = [];
+      const particleCount = Math.min(30, window.innerWidth / 25); // Optimized for performance
+
+      function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas, { passive: true });
 
-        const particles = [];
-        const particleCount = 60;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 5 + 1;
-                this.speedX = Math.random() * 1.5 - 0.75;
-                this.speedY = Math.random() * 1.5 - 0.75;
-                this.color = `hsl(${Math.random() * 60 + 240}, 70%, 70%)`;
-            }
-
-            update(mouse) {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.size > 0.2) this.size -= 0.03;
-
-                if (mouse.x && mouse.y) {
-                    const dx = mouse.x - this.x;
-                    const dy = mouse.y - this.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 120) {
-                        this.speedX += dx / distance * 0.5;
-                        this.speedY += dy / distance * 0.5;
-                        this.size += 0.3;
-                    }
-                }
-
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+      class Particle {
+        constructor() {
+          this.reset();
         }
 
-        function initParticles() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.speedX = Math.random() * 0.8 - 0.4;
+          this.speedY = Math.random() * 0.8 - 0.4;
+          this.color = `hsl(${Math.random() * 60 + 240}, 80%, 75%)`;
         }
 
-        const mouse = { x: null, y: null };
-        canvas.addEventListener('touchmove', (e) => {
+        update(mouse) {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.size > 0.2) this.size -= 0.015;
+
+          if (mouse.x && mouse.y) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const distance = Math.hypot(dx, dy);
+            if (distance < 80) {
+              this.speedX += (dx / distance) * 0.2;
+              this.speedY += (dy / distance) * 0.2;
+              this.size = Math.min(this.size + 0.15, 4);
+            }
+          }
+
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = Array.from({ length: particleCount }, () => new Particle());
+      }
+
+      const mouse = { x: null, y: null };
+      canvas.addEventListener(
+        "touchmove",
+        (e) => {
+          e.preventDefault();
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        },
+        { passive: false }
+      );
+
+      canvas.addEventListener("touchend", () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((particle) => {
+          particle.update(mouse);
+          particle.draw();
+          if (particle.size <= 0.2) particle.reset();
+        });
+        requestAnimationFrame(animateParticles);
+      }
+
+      initParticles();
+      animateParticles();
+
+      // Modal Functionality
+      function openModal(img) {
+        const modal = $("#modal");
+        const modalImg = $("#modal-img");
+        let scale = 1;
+
+        modal.style.display = "flex";
+        modal.style.opacity = "0";
+        modalImg.src = img.src;
+
+        requestAnimationFrame(() => {
+          modal.style.opacity = "1";
+          modalImg.classList.add("modal-active");
+        });
+
+        let initialDistance = 0;
+        const handleTouchZoom = (e) => {
+          if (e.touches.length === 2) {
             e.preventDefault();
-            mouse.x = e.touches[0].clientX;
-            mouse.y = e.touches[0].clientY;
-        });
-
-        canvas.addEventListener('touchend', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update(mouse);
-                particle.draw();
-                if (particle.size <= 0.2) {
-                    particles.splice(particles.indexOf(particle), 1);
-                    particles.push(new Particle());
-                }
-            });
-            requestAnimationFrame(animateParticles);
-        }
-
-        initParticles();
-        animateParticles();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Modal Functionality
-        function openModal(img) {
-            const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modal-img");
-            let scale = 1;
-
-            modal.style.display = "flex";
-            modal.style.opacity = "0";
-            modalImg.src = img.src;
-
-            setTimeout(() => {
-                modal.style.opacity = "1";
-                modalImg.classList.add("modal-active");
-            }, 10);
-
-            modalImg.addEventListener('touchstart', handleTouchZoom);
-            modalImg.addEventListener('touchmove', handleTouchZoom);
-
-            let initialDistance = 0;
-            function handleTouchZoom(e) {
-                if (e.touches.length === 2) {
-                    e.preventDefault();
-                    const touch1 = e.touches[0];
-                    const touch2 = e.touches[1];
-                    const distance = Math.hypot(touch1.clientX - touch2.clientX, touch1.clientY - touch2.clientY);
-                    if (initialDistance === 0) {
-                        initialDistance = distance;
-                    }
-                    scale = Math.min(Math.max(scale * (distance / initialDistance), 0.5), 3);
-                    modalImg.style.transform = `scale(${scale})`;
-                }
-            }
-
-            modalImg.addEventListener('touchend', () => {
-                initialDistance = 0;
-            });
-        }
-
-        function closeModal(event) {
-            if (event.target.id === "modal" || event.target.id === "close") {
-                const modal = document.getElementById("modal");
-                const modalImg = document.getElementById("modal-img");
-                modal.style.opacity = "0";
-                modalImg.classList.remove("modal-active");
-                setTimeout(() => {
-                    modal.style.display = "none";
-                    modalImg.style.transform = "scale(1)";
-                }, 300);
-            }
-        }
-
-        // Slider Functionality
-        const slides = document.querySelector('.slides');
-        const slide = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        let index = 0;
-        let isDragging = false;
-        let startX = 0;
-        let endX = 0;
-        let autoSlide;
-
-        const showSlide = (i) => {
-            index = (i + slide.length) % slide.length;
-            slides.style.transform = `translateX(-${index * 100}%)`;
-            slide.forEach((s, idx) => {
-                s.style.transform = idx === index ? 'perspective(1000px) rotateY(0deg)' : 'perspective(1000px) rotateY(35deg)';
-            });
-            slides.style.transition = 'transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const distance = Math.hypot(
+              touch1.clientX - touch2.clientX,
+              touch1.clientY - touch2.clientY
+            );
+            if (initialDistance === 0) initialDistance = distance;
+            scale = Math.min(
+              Math.max(scale * (distance / initialDistance), 0.5),
+              3
+            );
+            modalImg.style.transform = `scale(${scale})`;
+          }
         };
 
-        const nextSlide = () => showSlide(index + 1);
-        const prevSlide = () => showSlide(index - 1);
-
-        const startAutoSlide = () => {
-            autoSlide = setInterval(nextSlide, 4000);
-        };
-
-        const stopAutoSlide = () => {
-            clearInterval(autoSlide);
-        };
-
-        slides.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].clientX;
-            slides.style.transition = 'none';
-            stopAutoSlide();
+        modalImg.addEventListener("touchstart", handleTouchZoom, {
+          passive: false,
         });
-
-        slides.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            endX = e.touches[0].clientX;
-            const diff = endX - startX;
-            slides.style.transform = `translateX(${-index * 100 + diff / slides.offsetWidth * 100}%)`;
+        modalImg.addEventListener("touchmove", handleTouchZoom, {
+          passive: false,
         });
+        modalImg.addEventListener("touchend", () => (initialDistance = 0));
+      }
 
-        slides.addEventListener('touchend', () => {
-            if (!isDragging) return;
-            isDragging = false;
-            const diff = endX - startX;
-            if (diff > 50) prevSlide();
-            else if (diff < -50) nextSlide();
-            else showSlide(index);
-            startAutoSlide();
+      function closeModal(e) {
+        if (e.target.id === "modal" || e.target.id === "close") {
+          const modal = $("#modal");
+          const modalImg = $("#modal-img");
+          modal.style.opacity = "0";
+          modalImg.classList.remove("modal-active");
+          setTimeout(() => {
+            modal.style.display = "none";
+            modalImg.style.transform = "scale(1)";
+          }, 600);
+        }
+      }
+
+      // Slider Functionality
+      const slides = $(".slides");
+      const slideEls = $$(".slide");
+      const prevBtn = $(".prev");
+      const nextBtn = $(".next");
+      let index = 0;
+      let isDragging = false;
+      let startX = 0;
+      let autoSlide;
+
+      function showSlide(i) {
+        index = (i + slideEls.length) % slideEls.length;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        slideEls.forEach((s, idx) => {
+          s.style.transform =
+            idx === index
+              ? "perspective(1000px) rotateY(0deg)"
+              : "perspective(1000px) rotateY(20deg)";
         });
+        slides.style.transition =
+          "transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+      }
 
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
+      function nextSlide() {
+        showSlide(index + 1);
+      }
 
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
+      function prevSlide() {
+        showSlide(index - 1);
+      }
 
+      function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(autoSlide);
+      }
+
+      slides.addEventListener(
+        "touchstart",
+        (e) => {
+          isDragging = true;
+          startX = e.touches[0].clientX;
+          slides.style.transition = "none";
+          stopAutoSlide();
+        },
+        { passive: false }
+      );
+
+      slides.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!isDragging) return;
+          const currentX = e.touches[0].clientX;
+          const diff = currentX - startX;
+          slides.style.transform = `translateX(${
+            -index * 100 + (diff / slides.offsetWidth) * 100
+          }%)`;
+        },
+        { passive: false }
+      );
+
+      slides.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff =
+          startX - slides.querySelector(".slide").getBoundingClientRect().left;
+        if (diff > 60) nextSlide();
+        else if (diff < -60) prevSlide();
+        else showSlide(index);
         startAutoSlide();
+      });
 
-        // Menu Auto-Close
-        document.querySelectorAll('.header-links').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('menu').checked = false;
-                link.classList.add('active');
-                setTimeout(() => link.classList.remove('active'), 1000);
-            });
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+
+      startAutoSlide();
+
+      // Hamburger Menu
+      const menuCheckbox = $("#menu");
+      const nav = $(".nav1");
+      document.addEventListener("click", (e) => {
+        if (
+          menuCheckbox.checked &&
+          !nav.contains(e.target) &&
+          e.target !== menuCheckbox &&
+          !e.target.closest('label[for="menu"]')
+        ) {
+          menuCheckbox.checked = false;
+          document.body.classList.remove("no-scroll");
+        }
+      });
+
+      menuCheckbox.addEventListener("change", () => {
+        document.body.classList.toggle("no-scroll", menuCheckbox.checked);
+      });
+
+      $$(".header-links").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuCheckbox.checked = false;
+          document.body.classList.remove("no-scroll");
+          $$(".header-links").forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+          setTimeout(() => link.classList.remove("active"), 800);
         });
+      });
 
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.querySelector('.mode-toggle i');
-            icon.classList.toggle('fa-moon');
-            icon.classList.toggle('fa-sun');
-            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-        }
+      // Dark Mode Toggle
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("light-mode");
+        const icon = $(".mode-toggle i");
+        icon.classList.toggle("fa-sun");
+        icon.classList.toggle("fa-moon");
+        localStorage.setItem(
+          "darkMode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
 
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-            document.querySelector('.mode-toggle i').classList.replace('fa-moon', 'fa-sun');
-        }
+      // Set default to dark mode
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+      $(".mode-toggle i").classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("darkMode", "true");
 
-        // Scroll Animations
-        const animateSections = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        animateSections.forEach(section => observer.observe(section));
-
-        // Scroll to Top
-        const scrollTopBtn = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
+      // Scroll Animations
+      const animateSections = $$(".animate-on-scroll");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
             }
+          });
+        },
+        { threshold: 0.25 }
+      );
 
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollTop = window.scrollY;
-            const progress = (scrollTop / scrollHeight) * 100;
-            document.querySelector('.progress-bar').style.width = `${progress}%`;
+      animateSections.forEach((section) => observer.observe(section));
+
+      // Scroll Navigation
+      const scrollTopBtn = $(".scroll-top");
+      const scrollPrevBtn = $(".scroll-prev");
+      const scrollNextBtn = $(".scroll-next");
+      const sections = $$("section, footer");
+      const progressBar = $(".progress-bar");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollY = window.scrollY;
+          scrollTopBtn.classList.toggle("visible", scrollY > 300);
+          scrollPrevBtn.classList.toggle("visible", scrollY > 300);
+          scrollNextBtn.classList.toggle("visible", scrollY > 300);
+
+          const scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.style.width = `${(scrollY / scrollHeight) * 100}%`;
+        },
+        { passive: true }
+      );
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function scrollToPrevSection() {
+        const currentScroll = window.scrollY;
+        const currentSection = sections.find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= 0 && rect.bottom > 0;
         });
+        const currentIndex = sections.indexOf(currentSection);
+        const targetSection =
+          currentIndex > 0 ? sections[currentIndex - 1] : sections[0];
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+      function scrollToNextSection() {
+        const currentScroll = window.scrollY;
+        const currentSection = sections.find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= 0 && rect.bottom > 0;
+        });
+        const currentIndex = sections.indexOf(currentSection);
+        const targetSection =
+          currentIndex < sections.length - 1
+            ? sections[currentIndex + 1]
+            : sections[sections.length - 1];
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Floating Action Button
+      function toggleFabMenu() {
+        const fabMenu = $(".fab-menu");
+        const fabIcon = $(".fab i");
+        fabMenu.classList.toggle("active");
+        fabIcon.classList.toggle("fa-plus");
+        fabIcon.classList.toggle("fa-times");
+      }
+
+      // Touch Feedback
+      $$(
+        ".button, .scroll-top, .scroll-prev, .scroll-next, .fab, .mode-toggle, .fab-menu a, .section-link, .header-links, .footer-links a, .tel"
+      ).forEach((el) => {
+        el.addEventListener(
+          "touchstart",
+          (e) => {
+            e.preventDefault();
+            el.classList.add("active");
+            setTimeout(() => el.classList.remove("active"), 200);
+            el.click();
+          },
+          { passive: false }
+        );
+      });
+
+      // Image Preload
+      $$("img").forEach((img) => {
+        if (img.src) new Image().src = img.src;
+      });
+
+      // Lazy Loading
+      const lazyImages = $$('img[loading="lazy"]');
+      const lazyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              lazyObserver.unobserve(img);
+            }
+          });
+        },
+        { rootMargin: "200px" }
+      );
+
+      lazyImages.forEach((img) => lazyObserver.observe(img));
+
+      // Keyboard Navigation
+      document.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case "ArrowUp":
+            scrollToPrevSection();
+            break;
+          case "ArrowDown":
+            scrollToNextSection();
+            break;
+          case "Home":
+            scrollToTop();
+            break;
+          case "Escape":
+            closeModal({ target: { id: "modal" } });
+            menuCheckbox.checked = false;
+            document.body.classList.remove("no-scroll");
+            $(".fab-menu").classList.remove("active");
+            $(".fab i").classList.replace("fa-times", "fa-plus");
+            break;
         }
+      });
 
-        // Floating Action Button Menu
-        function toggleFabMenu() {
-            const fabMenu = document.querySelector('.fab-menu');
-            const fabIcon = document.querySelector('.fab i');
-            fabMenu.classList.toggle('active');
-            fabIcon.classList.toggle('fa-plus');
-            fabIcon.classList.toggle('fa-times');
-        }
-
-        // Lazy Load Images
-        document.querySelectorAll('img').forEach(img => {
-            img.setAttribute('loading', 'lazy');
+      // Smooth Anchor Links
+      $$('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = anchor.getAttribute("href").slice(1);
+          const target = $(`#${targetId}`);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
         });
+      });
 
-        // Smooth Touch Feedback
-        document.querySelectorAll('a, button, .section-link, .header-links, .fab, .footer-links a, .footer-icon a, .mode-toggle, .scroll-top').forEach(el => {
-            el.addEventListener('touchstart', () => {
-                el.style.transform = 'scale(0.95)';
-                el.style.transition = 'transform 0.2s ease';
+      // Throttle Scroll Events
+      let isScrolling = false;
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+              animateSections.forEach((section) => {
+                if (
+                  section.getBoundingClientRect().top <
+                  window.innerHeight * 0.8
+                ) {
+                  section.classList.add("visible");
+                }
+              });
+              isScrolling = false;
             });
-            el.addEventListener('touchend', () => {
-                el.style.transform = 'scale(1)';
-                setTimeout(() => {
-                    el.style.transition = 'all 0.3s ease';
-                }, 200);
-            });
-        });
+          }
+        },
+        { passive: true }
+      );
     </script>
-</body>
-
+  </body>
 </html>
