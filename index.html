@@ -37,13 +37,13 @@
         font-family: "Inter", Arial, sans-serif;
         background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
         color: #e0e0e0;
-        transition: background 0.5s ease, color 0.5s ease;
+        transition: background 0.2s ease, color 0.2s ease;
         overflow-x: hidden;
       }
 
       body.light-mode {
-        background: linear-gradient(135deg, #e6f3ea 0%, #d4e6d9 100%);
-        color: #1a1a1a;
+        background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+        color: #2c3e50;
       }
 
       body.no-scroll {
@@ -76,11 +76,12 @@
         background: rgba(20, 20, 20, 0.95);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
-        transition: background 0.5s ease;
+        transition: background 0.2s ease;
       }
 
       body.light-mode header {
         background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .header-content {
@@ -100,7 +101,7 @@
       .logo {
         width: 48px;
         height: 48px;
-        transition: transform 0.8s ease, filter 0.8s ease;
+        transition: transform 0.2s ease, filter 0.2s ease;
       }
 
       .logo:hover {
@@ -116,7 +117,7 @@
       }
 
       body.light-mode .logo__title {
-        color: #1a1a1a;
+        color: #2c3e50;
       }
 
       .logo__title span {
@@ -138,7 +139,7 @@
         gap: 5px;
         width: 32px;
         height: 32px;
-        transition: transform 0.8s ease;
+        transition: transform 0.2s ease;
       }
 
       .hm-line {
@@ -146,7 +147,7 @@
         height: 4px;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         border-radius: 2px;
-        transition: all 0.8s ease;
+        transition: all 0.2s ease;
       }
 
       .mobile_input:checked ~ header .nav1 {
@@ -184,7 +185,7 @@
         height: 0;
         opacity: 0;
         transform: translateY(-100%);
-        transition: all 0.8s ease;
+        transition: all 0.2s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -204,47 +205,47 @@
         font-weight: 600;
         padding: 12px 25px;
         border-radius: 10px;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         position: relative;
-        animation: slideFromCorner 0.8s ease forwards;
+        animation: slideFromCorner 0.2s ease forwards;
         opacity: 0;
         transform: translate(-50px, -50px);
       }
 
       body.light-mode .header-links {
-        color: #1a1a1a;
+        color: #2c3e50;
       }
 
       .header-links:nth-child(1) {
-        animation-delay: 0.1s;
+        animation-delay: 0.05s;
       }
 
       .header-links:nth-child(2) {
-        animation-delay: 0.2s;
+        animation-delay: 0.1s;
       }
 
       .header-links:nth-child(3) {
-        animation-delay: 0.3s;
+        animation-delay: 0.15s;
       }
 
       .header-links:nth-child(4) {
-        animation-delay: 0.4s;
+        animation-delay: 0.2s;
       }
 
       .header-links:nth-child(5) {
-        animation-delay: 0.5s;
+        animation-delay: 0.25s;
       }
 
       .header-links:nth-child(6) {
-        animation-delay: 0.6s;
+        animation-delay: 0.3s;
       }
 
       .header-links:nth-child(7) {
-        animation-delay: 0.7s;
+        animation-delay: 0.35s;
       }
 
       .header-links:nth-child(8) {
-        animation-delay: 0.8s;
+        animation-delay: 0.4s;
       }
 
       .header-links::before {
@@ -256,7 +257,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        transition: width 0.5s ease;
+        transition: width 0.2s ease;
       }
 
       .header-links:hover::before,
@@ -296,7 +297,7 @@
       }
 
       body.light-mode .hero {
-        background: #e6f3ea;
+        background: #f0f4f8;
       }
 
       .hero-overlay {
@@ -313,12 +314,24 @@
         z-index: 1;
       }
 
+      body.light-mode .hero-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0.1)
+        );
+      }
+
       .hero-content {
         position: relative;
         z-index: 2;
         color: white;
         padding: 20px;
         transform: perspective(1000px);
+      }
+
+      body.light-mode .hero-content {
+        color: #2c3e50;
       }
 
       .hero-content h1 {
@@ -329,10 +342,18 @@
         transform: perspective(1000px) rotateX(8deg);
       }
 
+      body.light-mode .hero-content h1 {
+        text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+      }
+
       .hero-content p {
         font-size: 20px;
-        animation: slideFromBottom 1.5s ease;
+        animation: slideFromBottom 0.2s ease;
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+      }
+
+      body.light-mode .hero-content p {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       }
 
       canvas#particles {
@@ -355,9 +376,13 @@
         transform: perspective(1000px);
       }
 
+      body.light-mode .slider {
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+      }
+
       .slides {
         display: flex;
-        transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
 
       .slide {
@@ -365,7 +390,7 @@
         height: 300px;
         position: relative;
         transform: perspective(1000px) rotateY(0deg);
-        transition: transform 0.9s ease;
+        transition: transform 0.2s ease;
       }
 
       .slide img {
@@ -373,7 +398,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 20px;
-        transition: transform 0.7s ease, filter 0.7s ease;
+        transition: transform 0.2s ease, filter 0.2s ease;
         aspect-ratio: 4/3;
       }
 
@@ -400,7 +425,7 @@
         padding: 12px;
         cursor: pointer;
         border-radius: 50%;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         font-size: 20px;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
       }
@@ -432,7 +457,7 @@
         position: relative;
         background: url("./images/section-bg.jpg") no-repeat center/cover;
         background-attachment: fixed;
-        gap: 30px;
+        gap: 50px; /* Vertikal masofani oshirish */
       }
 
       body.light-mode section {
@@ -444,13 +469,13 @@
         font-size: 34px;
         color: #e0e0e0;
         position: relative;
-        animation: slideFromTop 0.9s ease;
+        animation: slideFromTop 0.2s ease;
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
       }
 
       body.light-mode .section-title {
-        color: #1a1a1a;
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        color: #2c3e50;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       }
 
       .gallery {
@@ -459,6 +484,7 @@
         gap: 20px;
         width: 100%;
         max-width: 800px;
+        margin: 30px 0; /* Vertikal masofani oshirish */
       }
 
       .gallery .zoom-container {
@@ -468,12 +494,16 @@
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
       }
 
+      body.light-mode .gallery .zoom-container {
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+      }
+
       .gallery img {
         width: 100%;
         height: 200px;
         object-fit: cover;
         border-radius: 15px;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         aspect-ratio: 4/3;
       }
 
@@ -490,7 +520,16 @@
         text-align: center;
         opacity: 0;
         transform: translateY(100%);
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
+      }
+
+      body.light-mode .gallery .zoom-container::after {
+        background: linear-gradient(
+          to top,
+          rgba(255, 255, 255, 0.9),
+          transparent
+        );
+        color: #2c3e50;
       }
 
       .gallery .zoom-container:hover::after {
@@ -514,7 +553,7 @@
         color: white;
         text-decoration: none;
         border-radius: 10px;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         font-weight: 600;
         position: relative;
         overflow: hidden;
@@ -534,7 +573,7 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(45deg, #00ddeb, #6b48ff);
-        transition: left 0.5s ease;
+        transition: left 0.2s ease;
         z-index: 1;
       }
 
@@ -570,7 +609,11 @@
         justify-content: center;
         align-items: center;
         z-index: 2000;
-        transition: opacity 0.5s ease;
+        transition: opacity 0.2s ease;
+      }
+
+      body.light-mode #modal {
+        background: rgba(255, 255, 255, 0.95);
       }
 
       #modal img {
@@ -578,8 +621,12 @@
         max-height: 90%;
         border-radius: 15px;
         transform: scale(1);
-        transition: transform 0.5s ease;
+        transition: transform 0.2s ease;
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+      }
+
+      body.light-mode #modal img {
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
       }
 
       #close {
@@ -589,7 +636,11 @@
         font-size: 35px;
         color: white;
         cursor: pointer;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
+      }
+
+      body.light-mode #close {
+        color: #2c3e50;
       }
 
       .modal-active img {
@@ -613,7 +664,7 @@
         padding: 40px;
         border-radius: 20px;
         box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-        transition: all 0.7s ease;
+        transition: all 0.2s ease;
         transform: perspective(1000px);
         width: 100%;
         max-width: 800px;
@@ -621,6 +672,7 @@
 
       body.light-mode .info__container {
         background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
       }
 
       .info__container iframe {
@@ -629,6 +681,10 @@
         border-radius: 15px;
         margin-bottom: 30px;
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      body.light-mode .info__container iframe {
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
       }
 
       .info__container p {
@@ -651,7 +707,7 @@
       }
 
       body.light-mode .info__container h3 {
-        color: #1a1a1a;
+        color: #2c3e50;
       }
 
       .bepul {
@@ -668,8 +724,12 @@
         font-size: 18px;
         display: inline-block;
         margin: 10px 0;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         position: relative;
+      }
+
+      body.light-mode .tel {
+        color: #2c3e50;
       }
 
       .tel::after {
@@ -680,7 +740,7 @@
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         bottom: -2px;
         left: 0;
-        transition: width 0.5s ease;
+        transition: width 0.2s ease;
       }
 
       .tel:hover::after {
@@ -713,13 +773,14 @@
       }
 
       body.light-mode footer {
-        background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+        background: linear-gradient(135deg, #d9e2ec, #f0f4f8);
+        color: #2c3e50;
       }
 
       .footer__title {
         font-size: 32px;
         margin-bottom: 40px;
-        animation: slideFromBottom 0.9s ease;
+        animation: slideFromBottom 0.2s ease;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
         -webkit-background-clip: text;
         background-clip: text;
@@ -743,8 +804,12 @@
       .footer-icon a {
         color: white;
         font-size: 30px;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         position: relative;
+      }
+
+      body.light-mode .footer-icon a {
+        color: #2c3e50;
       }
 
       .footer-icon a::after {
@@ -759,7 +824,12 @@
         border-radius: 5px;
         font-size: 12px;
         opacity: 0;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
+      }
+
+      body.light-mode .footer-icon a::after {
+        background: #2c3e50;
+        color: white;
       }
 
       .footer-icon a:hover::after {
@@ -790,10 +860,14 @@
         font-size: 16px;
         padding: 12px 25px;
         border-radius: 10px;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         position: relative;
         overflow: hidden;
         z-index: 1;
+      }
+
+      body.light-mode .footer-links a {
+        color: #2c3e50;
       }
 
       .footer-links a span {
@@ -809,7 +883,7 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        transition: left 0.5s ease;
+        transition: left 0.2s ease;
         z-index: 1;
       }
 
@@ -858,8 +932,12 @@
         justify-content: center;
         cursor: pointer;
         z-index: 1000;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      body.light-mode .mode-toggle {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
       }
 
       .mode-toggle:hover {
@@ -878,7 +956,7 @@
       }
 
       .mode-toggle i {
-        transition: transform 0.5s ease;
+        transition: transform 0.2s ease;
       }
 
       body.light-mode .mode-toggle i {
@@ -898,10 +976,16 @@
         justify-content: center;
         font-size: 26px;
         cursor: pointer;
-        opacity: 0;
-        transition: all 0.5s ease;
+        opacity: 1; /* Doimo ko‘rinadi */
+        transition: all 0.2s ease;
         z-index: 1000;
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      body.light-mode .scroll-top,
+      body.light-mode .scroll-prev,
+      body.light-mode .scroll-next {
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
       }
 
       .scroll-top {
@@ -911,6 +995,10 @@
         color: white;
       }
 
+      body.light-mode .scroll-top {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+      }
+
       .scroll-prev {
         bottom: 90px;
         right: 90px;
@@ -918,18 +1006,19 @@
         color: white;
       }
 
+      body.light-mode .scroll-prev {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+      }
+
       .scroll-next {
         bottom: 20px;
         right: 90px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        background: linear-gradient(45deg, #ff2e63, #00ddeb);
         color: white;
       }
 
-      .scroll-top.visible,
-      .scroll-prev.visible,
-      .scroll-next.visible {
-        opacity: 1;
-        transform: translateY(0);
+      body.light-mode .scroll-next {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
       }
 
       .scroll-top:hover,
@@ -970,8 +1059,12 @@
         font-size: 26px;
         cursor: pointer;
         z-index: 1000;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      body.light-mode .fab {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
       }
 
       .fab:hover {
@@ -1000,7 +1093,7 @@
         z-index: 1000;
         opacity: 0;
         transform: translateY(20px);
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         pointer-events: none;
       }
 
@@ -1020,8 +1113,12 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      body.light-mode .fab-menu a {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
       }
 
       .fab-menu a:hover {
@@ -1041,15 +1138,15 @@
       }
 
       .fab-menu a:nth-child(1) {
-        transition-delay: 0.1s;
+        transition-delay: 0.05s;
       }
 
       .fab-menu a:nth-child(2) {
-        transition-delay: 0.2s;
+        transition-delay: 0.1s;
       }
 
       .fab-menu a:nth-child(3) {
-        transition-delay: 0.3s;
+        transition-delay: 0.15s;
       }
 
       /* Parallax */
@@ -1083,11 +1180,24 @@
         );
       }
 
+      body.light-mode .parallax-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.2)
+        );
+      }
+
       .parallax h2 {
         font-size: 32px;
         z-index: 2;
         animation: neonGlow 1.5s ease infinite alternate;
         text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
+      }
+
+      body.light-mode .parallax h2 {
+        color: #2c3e50;
+        text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
       }
 
       /* Animations */
@@ -1211,39 +1321,39 @@
 
       .animate-on-scroll {
         opacity: 0;
-        transition: all 0.9s ease;
+        transition: all 0.2s ease;
       }
 
       .animate-on-scroll.from-left {
-        animation: slideFromLeft 0.9s ease forwards;
+        animation: slideFromLeft 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-right {
-        animation: slideFromRight 0.9s ease forwards;
+        animation: slideFromRight 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-top {
-        animation: slideFromTop 0.9s ease forwards;
+        animation: slideFromTop 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-bottom {
-        animation: slideFromBottom 0.9s ease forwards;
+        animation: slideFromBottom 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-top-right {
-        animation: slideFromTopRight 0.9s ease forwards;
+        animation: slideFromTopRight 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-top-left {
-        animation: slideFromTopLeft 0.9s ease forwards;
+        animation: slideFromTopLeft 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-bottom-right {
-        animation: slideFromBottomRight 0.9s ease forwards;
+        animation: slideFromBottomRight 0.2s ease forwards;
       }
 
       .animate-on-scroll.from-bottom-left {
-        animation: slideFromBottomLeft 0.9s ease forwards;
+        animation: slideFromBottomLeft 0.2s ease forwards;
       }
 
       .animate-on-scroll.visible {
@@ -1740,9 +1850,6 @@
           <a href="tel:+998940794842" data-tooltip="Ikkinchi raqam"
             ><i class="fas fa-phone"></i
           ></a>
-          <a href="https://t.me/Fatx_mebel" data-tooltip="Telegram"
-            ><i class="fab fa-telegram"></i
-          ></a>
         </div>
         <div class="footer-links">
           <a href="#header"><span>Bosh sahifa</span></a>
@@ -1816,19 +1923,17 @@
         ><i class="fab fa-telegram"></i
       ></a>
     </div>
-
     <script>
-      // Utility Functions
       const $ = (selector, context = document) =>
         context.querySelector(selector);
       const $$ = (selector, context = document) =>
         Array.from(context.querySelectorAll(selector));
 
-      // Particles Animation (Highly Optimized)
+      // Particles Animation
       const canvas = $("#particles");
       const ctx = canvas.getContext("2d", { alpha: true });
       let particles = [];
-      const particleCount = Math.min(30, window.innerWidth / 25); // Optimized for performance
+      const particleCount = Math.min(30, window.innerWidth / 25);
 
       function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -1964,7 +2069,7 @@
           setTimeout(() => {
             modal.style.display = "none";
             modalImg.style.transform = "scale(1)";
-          }, 600);
+          }, 200); // 0.2s to match CSS transitions
         }
       }
 
@@ -1988,7 +2093,7 @@
               : "perspective(1000px) rotateY(20deg)";
         });
         slides.style.transition =
-          "transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+          "transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
       }
 
       function nextSlide() {
@@ -2031,14 +2136,26 @@
         { passive: false }
       );
 
-      slides.addEventListener("touchend", () => {
-        if (!isDragging) return;
-        isDragging = false;
-        const diff =
-          startX - slides.querySelector(".slide").getBoundingClientRect().left;
-        if (diff > 60) nextSlide();
-        else if (diff < -60) prevSlide();
-        else showSlide(index);
+      slides.addEventListener(
+        "touchend",
+        (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          const endX = e.changedTouches[0].clientX;
+          const diff = endX - startX;
+          if (Math.abs(diff) > slides.offsetWidth / 4) {
+            diff > 0 ? prevSlide() : nextSlide();
+          } else {
+            showSlide(index);
+          }
+          startAutoSlide();
+        },
+        { passive: false }
+      );
+
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        stopAutoSlide();
         startAutoSlide();
       });
 
@@ -2048,231 +2165,103 @@
         startAutoSlide();
       });
 
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
-      });
-
       startAutoSlide();
 
-      // Hamburger Menu
-      const menuCheckbox = $("#menu");
-      const nav = $(".nav1");
-      document.addEventListener("click", (e) => {
-        if (
-          menuCheckbox.checked &&
-          !nav.contains(e.target) &&
-          e.target !== menuCheckbox &&
-          !e.target.closest('label[for="menu"]')
-        ) {
-          menuCheckbox.checked = false;
-          document.body.classList.remove("no-scroll");
-        }
-      });
-
-      menuCheckbox.addEventListener("change", () => {
-        document.body.classList.toggle("no-scroll", menuCheckbox.checked);
-      });
-
-      $$(".header-links").forEach((link) => {
-        link.addEventListener("click", () => {
-          menuCheckbox.checked = false;
-          document.body.classList.remove("no-scroll");
-          $$(".header-links").forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-          setTimeout(() => link.classList.remove("active"), 800);
-        });
-      });
+      // Scroll Progress Bar
+      const progressBar = $(".progress-bar");
+      function updateProgressBar() {
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+      window.addEventListener("scroll", updateProgressBar, { passive: true });
 
       // Dark Mode Toggle
       function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
         document.body.classList.toggle("light-mode");
-        const icon = $(".mode-toggle i");
-        icon.classList.toggle("fa-sun");
-        icon.classList.toggle("fa-moon");
+        const modeIcon = $(".mode-toggle i");
+        modeIcon.classList.toggle("fa-sun");
+        modeIcon.classList.toggle("fa-moon");
         localStorage.setItem(
-          "darkMode",
-          document.body.classList.contains("dark-mode")
+          "theme",
+          document.body.classList.contains("light-mode") ? "light" : "dark"
         );
       }
 
-      // Set default to dark mode
-      document.body.classList.add("dark-mode");
-      document.body.classList.remove("light-mode");
-      $(".mode-toggle i").classList.replace("fa-moon", "fa-sun");
-      localStorage.setItem("darkMode", "true");
+      // Load Theme
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        $(".mode-toggle i").classList.replace("fa-sun", "fa-moon");
+      }
 
-      // Scroll Animations
-      const animateSections = $$(".animate-on-scroll");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-
-      animateSections.forEach((section) => observer.observe(section));
-
-      // Scroll Navigation
-      const scrollTopBtn = $(".scroll-top");
-      const scrollPrevBtn = $(".scroll-prev");
-      const scrollNextBtn = $(".scroll-next");
-      const sections = $$("section, footer");
-      const progressBar = $(".progress-bar");
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          const scrollY = window.scrollY;
-          scrollTopBtn.classList.toggle("visible", scrollY > 300);
-          scrollPrevBtn.classList.toggle("visible", scrollY > 300);
-          scrollNextBtn.classList.toggle("visible", scrollY > 300);
-
-          const scrollHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-          progressBar.style.width = `${(scrollY / scrollHeight) * 100}%`;
-        },
-        { passive: true }
-      );
-
+      // Scroll Functions
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       function scrollToPrevSection() {
-        const currentScroll = window.scrollY;
-        const currentSection = sections.find((section) => {
-          const rect = section.getBoundingClientRect();
-          return rect.top <= 0 && rect.bottom > 0;
-        });
-        const currentIndex = sections.indexOf(currentSection);
-        const targetSection =
-          currentIndex > 0 ? sections[currentIndex - 1] : sections[0];
-        targetSection.scrollIntoView({ behavior: "smooth" });
+        const sections = $$("section");
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+        const currentSection = sections.findIndex(
+          (s) => s.offsetTop >= scrollPos
+        );
+        const prevSection =
+          currentSection > 0 ? sections[currentSection - 1] : sections[0];
+        window.scrollTo({ top: prevSection.offsetTop, behavior: "smooth" });
       }
 
       function scrollToNextSection() {
-        const currentScroll = window.scrollY;
-        const currentSection = sections.find((section) => {
-          const rect = section.getBoundingClientRect();
-          return rect.top <= 0 && rect.bottom > 0;
-        });
-        const currentIndex = sections.indexOf(currentSection);
-        const targetSection =
-          currentIndex < sections.length - 1
-            ? sections[currentIndex + 1]
+        const sections = $$("section");
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+        const currentSection = sections.findIndex(
+          (s) => s.offsetTop >= scrollPos
+        );
+        const nextSection =
+          currentSection < sections.length - 1
+            ? sections[currentSection + 1]
             : sections[sections.length - 1];
-        targetSection.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({ top: nextSection.offsetTop, behavior: "smooth" });
       }
 
-      // Floating Action Button
+      // FAB Menu Toggle
       function toggleFabMenu() {
         const fabMenu = $(".fab-menu");
         const fabIcon = $(".fab i");
         fabMenu.classList.toggle("active");
         fabIcon.classList.toggle("fa-plus");
         fabIcon.classList.toggle("fa-times");
+        document.body.classList.toggle(
+          "no-scroll",
+          fabMenu.classList.contains("active")
+        );
       }
 
-      // Touch Feedback
-      $$(
-        ".button, .scroll-top, .scroll-prev, .scroll-next, .fab, .mode-toggle, .fab-menu a, .section-link, .header-links, .footer-links a, .tel"
-      ).forEach((el) => {
-        el.addEventListener(
-          "touchstart",
-          (e) => {
-            e.preventDefault();
-            el.classList.add("active");
-            setTimeout(() => el.classList.remove("active"), 200);
-            el.click();
-          },
-          { passive: false }
-        );
-      });
-
-      // Image Preload
-      $$("img").forEach((img) => {
-        if (img.src) new Image().src = img.src;
-      });
-
-      // Lazy Loading
-      const lazyImages = $$('img[loading="lazy"]');
-      const lazyObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src || img.src;
-              lazyObserver.unobserve(img);
-            }
-          });
-        },
-        { rootMargin: "200px" }
-      );
-
-      lazyImages.forEach((img) => lazyObserver.observe(img));
-
-      // Keyboard Navigation
-      document.addEventListener("keydown", (e) => {
-        switch (e.key) {
-          case "ArrowUp":
-            scrollToPrevSection();
-            break;
-          case "ArrowDown":
-            scrollToNextSection();
-            break;
-          case "Home":
-            scrollToTop();
-            break;
-          case "Escape":
-            closeModal({ target: { id: "modal" } });
-            menuCheckbox.checked = false;
-            document.body.classList.remove("no-scroll");
-            $(".fab-menu").classList.remove("active");
-            $(".fab i").classList.replace("fa-times", "fa-plus");
-            break;
+      // Close FAB Menu on Scroll
+      window.addEventListener("scroll", () => {
+        const fabMenu = $(".fab-menu");
+        const fabIcon = $(".fab i");
+        if (fabMenu.classList.contains("active")) {
+          fabMenu.classList.remove("active");
+          fabIcon.classList.replace("fa-times", "fa-plus");
+          document.body.classList.remove("no-scroll");
         }
       });
 
-      // Smooth Anchor Links
-      $$('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", (e) => {
-          e.preventDefault();
-          const targetId = anchor.getAttribute("href").slice(1);
-          const target = $(`#${targetId}`);
-          if (target) target.scrollIntoView({ behavior: "smooth" });
-        });
-      });
-
-      // Throttle Scroll Events
-      let isScrolling = false;
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!isScrolling) {
-            isScrolling = true;
-            requestAnimationFrame(() => {
-              animateSections.forEach((section) => {
-                if (
-                  section.getBoundingClientRect().top <
-                  window.innerHeight * 0.8
-                ) {
-                  section.classList.add("visible");
-                }
-              });
-              isScrolling = false;
-            });
+      // Animate on Scroll
+      function animateOnScroll() {
+        const elements = $$(".animate-on-scroll");
+        const windowHeight = window.innerHeight;
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
+            el.classList.add("visible");
           }
-        },
-        { passive: true }
-      );
+        });
+      }
+      window.addEventListener("scroll", animateOnScroll, { passive: true });
+      window.addEventListener("load", animateOnScroll);
     </script>
   </body>
 </html>
