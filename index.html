@@ -1,1943 +1,1780 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
-    <meta
-      name="description"
-      content="Fatx Mebel - Andijon bo'ylab bepul yetkazib berish bilan zamonaviy mebel dizaynlari!"
-    />
-    <meta name="keywords" content="mebel, zamonaviy mebel, Andijon mebel, " />
-    <meta name="author" content="Abdulhayev Nuriddin, Universal Developer" />
-    <title>Designed by Universal</title>
-    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-user-select: none;
-        user-select: none;
-        touch-action: manipulation;
-      }
 
-      html {
-        scroll-behavior: smooth;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description"
+    content="Fatx Mebel - Andijon bo'ylab bepul yetkazib berish bilan zamonaviy mebel dizaynlari!" />
+  <meta name="author" content="Nuriddinbek Abdulhayev">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nuriddinbek Abdulhayev | Frontend Portfolio">
+  <meta property="og:description"
+    content="Frontend dasturchi tomonidan yaratilgan portfolio va loyihalar. Web dizayn va ishlab chiqish xizmatlari.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://universalportfolio.vercel.app/">
+  <meta property="og:image" content="https://universalportfolio.vercel.app/images/favicon.svg">
+  <meta property="og:site_name" content="Nuriddinbek Abdulhayev | Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuriddinbek Abdulhayev | Frontend Portfolio">
+  <meta name="twitter:description"
+    content="Nuriddinbek Abdulhayevning portfolio sahifasi. Dasturlash, dizayn va responsive web loyihalar.">
+  <meta name="twitter:image" content="https://universalportfolio.vercel.app/images/favicon.svg">
+  <link rel="canonical" href="https://universalportfolio.vercel.app/">
+  <meta name="keywords" content="fatx mebel" />
+  <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+  <title>Designed by Universal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-      body {
-        font-family: "Inter", Arial, sans-serif;
-        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-        color: #e0e0e0;
-        transition: background 0.5s ease, color 0.5s ease;
-        overflow-x: hidden;
-      }
 
-      body.light-mode {
-        background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-        color: #2c3e50;
-        transition: background 0.5s ease, color 0.5s ease;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
 
-      .container {
-        max-width: 100%;
-        padding: 0 15px;
-        margin: 0 auto;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      /* Progress Bar */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #6b48ff, #00ddeb);
-        z-index: 2000;
-      }
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      color: #e0e0e0;
+      transition: background 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+    }
 
-      /* Header */
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(20, 20, 20, 0.95);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        transition: background 0.5s ease;
-      }
+    body.light-mode {
+      background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+      color: #2c3e50;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
 
-      body.light-mode header {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+    .container {
+      max-width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
 
-      .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-      }
+    /* Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6b48ff, #00ddeb);
+      z-index: 2000;
+    }
 
-      .logo__section {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-      }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: background 0.5s ease;
+    }
 
-      .logo {
-        width: 48px;
-        height: 48px;
-        transition: transform 0.5s ease, filter 0.5s ease;
-      }
+    body.light-mode header {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      .logo:hover {
-        transform: rotateY(360deg) scale(1.2);
-        filter: drop-shadow(0 0 10px rgba(107, 72, 255, 0.5));
-      }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
 
-      .logo__title {
-        font-size: 24px;
-        font-weight: 800;
-        color: #ffffff;
-        font-style: italic;
-      }
+    .logo__section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
 
-      body.light-mode .logo__title {
-        color: #2c3e50;
-      }
+    .logo {
+      width: 48px;
+      height: 48px;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
 
-      .logo__title span {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    .logo:hover {
+      transform: rotateY(360deg) scale(1.2);
+      filter: drop-shadow(0 0 10px rgba(107, 72, 255, 0.5));
+    }
 
-      .mobile_input {
-        display: none;
-      }
+    .logo__title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      font-style: italic;
+    }
 
-      label {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 32px;
-        height: 32px;
-        transition: transform 0.5s ease;
-      }
+    body.light-mode .logo__title {
+      color: #2c3e50;
+    }
 
-      .hm-line {
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        border-radius: 2px;
-        transition: all 0.5s ease;
-      }
+    .logo__title span {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .mobile_input:checked ~ header .nav1 {
-        transform: translateY(0);
-        opacity: 1;
-        height: 100vh;
-        pointer-events: auto;
-      }
+    .mobile_input {
+      display: none;
+    }
 
-      .mobile_input:checked ~ header label {
-        transform: rotate(360deg);
-      }
+    label {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.5s ease;
+    }
 
-      .mobile_input:checked ~ header label .hm-line:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-      }
+    .hm-line {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      border-radius: 2px;
+      transition: all 0.5s ease;
+    }
 
-      .mobile_input:checked ~ header label .hm-line:nth-child(2) {
-        opacity: 0;
-        transform: scale(0);
-      }
+    .mobile_input:checked~header .nav1 {
+      transform: translateY(0);
+      opacity: 1;
+      height: 100vh;
+      pointer-events: auto;
+    }
 
-      .mobile_input:checked ~ header label .hm-line:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-      }
+    .mobile_input:checked~header label {
+      transform: rotate(360deg);
+    }
 
-      .mobile_input:checked ~ body {
-        overflow: hidden;
-      }
+    .mobile_input:checked~header label .hm-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+    }
 
-      .nav1 {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(20, 20, 20, 0.95);
-        height: 0;
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: all 0.5s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding-top: 15px;
-        pointer-events: none;
-      }
+    .mobile_input:checked~header label .hm-line:nth-child(2) {
+      opacity: 0;
+      transform: scale(0);
+    }
 
-      body.light-mode .nav1 {
-        background: rgba(255, 255, 255, 0.95);
-      }
+    .mobile_input:checked~header label .hm-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+    }
 
-      .header-links {
-        text-decoration: none;
-        color: #e0e0e0;
-        font-size: 17px;
-        font-weight: 600;
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: all 0.5s ease;
-        position: relative;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
+    .mobile_input:checked~body {
+      overflow: hidden;
+    }
 
-      body.light-mode .header-links {
-        color: #2c3e50;
-      }
+    .nav1 {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.95);
+      height: 0;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding-top: 15px;
+      pointer-events: none;
+    }
 
-      .header-links::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: width 0.5s ease;
-      }
+    body.light-mode .nav1 {
+      background: rgba(255, 255, 255, 0.95);
+    }
 
-      .header-links:hover::before,
-      .header-links.active::before {
-        width: 90%;
-      }
+    .header-links {
+      text-decoration: none;
+      color: #e0e0e0;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+      position: relative;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
 
-      .header-links:hover {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-      }
+    body.light-mode .header-links {
+      color: #2c3e50;
+    }
 
-      .header-links:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
+    .header-links::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.5s ease;
+    }
 
-      .header-links:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
+    .header-links:hover::before,
+    .header-links.active::before {
+      width: 90%;
+    }
 
-      /* Hero Section */
-      .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: #0a0a0a;
-        overflow: hidden;
-      }
+    .header-links:hover {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    }
 
-      body.light-mode .hero {
-        background: #f0f4f8;
-      }
+    .header-links:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
 
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to bottom,
+    .header-links:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+
+    body.light-mode .hero {
+      background: #f0f4f8;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,
           rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.1)
-        );
-        z-index: 1;
-      }
+          rgba(0, 0, 0, 0.1));
+      z-index: 1;
+    }
 
-      body.light-mode .hero-overlay {
-        background: linear-gradient(
-          to bottom,
+    body.light-mode .hero-overlay {
+      background: linear-gradient(to bottom,
           rgba(255, 255, 255, 0.3),
-          rgba(255, 255, 255, 0.1)
-        );
-      }
+          rgba(255, 255, 255, 0.1));
+    }
 
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        color: white;
-        padding: 20px;
-        transform: perspective(1000px);
-      }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+      transform: perspective(1000px);
+    }
 
-      body.light-mode .hero-content {
-        color: #2c3e50;
-      }
+    body.light-mode .hero-content {
+      color: #2c3e50;
+    }
 
+    .hero-content h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
+      transform: perspective(1000px) rotateX(8deg);
+    }
+
+    body.light-mode .hero-content h1 {
+      text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    }
+
+    body.light-mode .hero-content p {
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    canvas#particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin: 50px 0;
+      border-radius: 20px;
+      box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+      transform: perspective(1000px);
+    }
+
+    body.light-mode .slider {
+      box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 300px;
+      position: relative;
+      transform: perspective(1000px) rotateY(0deg);
+      transition: transform 0.5s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      aspect-ratio: 4/3;
+    }
+
+    .slide:hover img {
+      transform: scale(1.2) rotateY(12deg);
+      filter: brightness(1.3);
+      box-shadow: 0 0 20px rgba(107, 72, 255, 0.6);
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 15px;
+    }
+
+    .button {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      font-size: 20px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .button:hover {
+      transform: scale(1.4) rotate(360deg);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .button:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
+
+    .button:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Sections */
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+      position: relative;
+      background: url("./images/section-bg.jpg") no-repeat center/cover;
+      background-attachment: fixed;
+      gap: 50px;
+    }
+
+    body.light-mode section {
+      background: url("./images/section-bg-light.jpg") no-repeat center/cover;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      color: #e0e0e0;
+      position: relative;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+
+    body.light-mode .section-title {
+      color: #2c3e50;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: 30px 0;
+    }
+
+    .gallery .zoom-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    body.light-mode .gallery .zoom-container {
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: all 0.5s ease;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery .zoom-container::after {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.5s ease;
+    }
+
+    body.light-mode .gallery .zoom-container::after {
+      background: linear-gradient(to top,
+          rgba(255, 255, 255, 0.9),
+          transparent);
+      color: #2c3e50;
+    }
+
+    .gallery .zoom-container:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery .zoom-container:hover img {
+      transform: scale(1.25) rotate(4deg);
+      filter: brightness(1.2);
+    }
+
+    .gallery .zoom-container:hover {
+      box-shadow: 0 0 25px rgba(107, 72, 255, 0.7);
+    }
+
+    .section-link {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .section-link span {
+      color: #fafafa;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-link::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #00ddeb, #6b48ff);
+      transition: left 0.5s ease;
+      z-index: 1;
+    }
+
+    .section-link:hover::before {
+      left: 0;
+    }
+
+    .section-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-link:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
+
+    .section-link:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Modal */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      transition: opacity 0.5s ease;
+    }
+
+    body.light-mode #modal {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      transform: scale(1);
+      transition: transform 0.5s ease;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    body.light-mode #modal img {
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    #close {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 35px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+
+    body.light-mode #close {
+      color: #2c3e50;
+    }
+
+    .modal-active img {
+      transform: scale(1.2);
+    }
+
+    #close:hover {
+      color: #6b48ff;
+      transform: rotateY(360deg) scale(1.4);
+    }
+
+    #close:active {
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    /* Info Section */
+    .info__container {
+      text-align: center;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease;
+      transform: perspective(1000px);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    body.light-mode .info__container {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .info__container iframe {
+      width: 100%;
+      height: 250px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    body.light-mode .info__container iframe {
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .info__container p {
+      font-size: 16px;
+      color: #b0b0b0;
+      margin-bottom: 25px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    body.light-mode .info__container p {
+      color: #34495e;
+    }
+
+    .info__container h3 {
+      font-size: 19px;
+      color: #e0e0e0;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    body.light-mode .info__container h3 {
+      color: #2c3e50;
+    }
+
+    .bepul {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .tel {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 18px;
+      display: inline-block;
+      margin: 10px 0;
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    body.light-mode .tel {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tel::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      bottom: -2px;
+      left: 0;
+      transition: width 0.5s ease;
+    }
+
+    .tel:hover::after {
+      width: 100%;
+    }
+
+    .tel:hover {
+      transform: translateY(-2px);
+    }
+
+    .tel:active {
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .tel:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.light-mode footer {
+      background: linear-gradient(135deg, #d9e2ec, #f0f4f8);
+    }
+
+    .footer__title {
+      font-size: 32px;
+      margin-bottom: 40px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-icon {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-icon a {
+      color: white;
+      font-size: 30px;
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    body.light-mode .footer-icon a {
+      color: #2c3e50;
+    }
+
+    .footer-icon a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6b48ff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    body.light-mode .footer-icon a::after {
+      background: #2c3e50;
+      color: white;
+    }
+
+    .footer-icon a:hover::after {
+      opacity: 1;
+      bottom: -40px;
+    }
+
+    .footer-icon a:hover {
+      color: #00ddeb;
+      transform: translateY(-5px) rotateY(360deg);
+    }
+
+    .footer-icon a:active {
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 12px 25px;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    body.light-mode .footer-links a {
+      color: #2c3e50;
+    }
+
+    .footer-links a span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-links a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      transition: left 0.5s ease;
+      z-index: 1;
+    }
+
+    .footer-links a:hover::before {
+      left: 0;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-links a:active {
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .footer-links a:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    .footer-info {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .footer-info p {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body.light-mode .footer-info p {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Dark Mode Toggle */
+    .mode-toggle {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.5s ease;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-mode .mode-toggle {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+    }
+
+    .mode-toggle:hover {
+      transform: rotateY(360deg) scale(1.2);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .mode-toggle:active {
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .mode-toggle:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    .mode-toggle i {
+      transition: transform 0.5s ease;
+    }
+
+    body.light-mode .mode-toggle i {
+      transform: rotateY(360deg);
+    }
+
+    /* Scroll Buttons */
+    .scroll-top,
+    .scroll-prev,
+    .scroll-next {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      cursor: pointer;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1000;
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-mode .scroll-top,
+    body.light-mode .scroll-prev,
+    body.light-mode .scroll-next {
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .scroll-top {
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+    }
+
+    body.light-mode .scroll-top {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+    }
+
+    .scroll-prev {
+      bottom: 90px;
+      right: 90px;
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+      color: white;
+    }
+
+    body.light-mode .scroll-prev {
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+    }
+
+    .scroll-next {
+      bottom: 20px;
+      right: 90px;
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+      color: white;
+    }
+
+    body.light-mode .scroll-next {
+      background: linear-gradient(45deg, #ff2e63, #00ddeb);
+    }
+
+    .scroll-top:hover,
+    .scroll-prev:hover,
+    .scroll-next:hover {
+      transform: translateY(-5px) scale(1.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .scroll-top:active,
+    .scroll-prev:active,
+    .scroll-next:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
+
+    .scroll-top:focus,
+    .scroll-prev:focus,
+    .scroll-next:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Floating Action Button */
+    .fab {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.5s ease;
+      box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-mode .fab {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+    }
+
+    .fab:hover {
+      transform: rotateY(360deg) scale(1.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .fab:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
+
+    .fab:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    .fab-menu {
+      position: fixed;
+      bottom: 160px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
+    .fab-menu.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .fab-menu a {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.5s ease;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-mode .fab-menu a {
+      background: linear-gradient(45deg, #6b48ff, #00ddeb);
+    }
+
+    .fab-menu a:hover {
+      transform: scale(1.2) rotate(360deg);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .fab-menu a:active {
+      transform: scale(0.95);
+      box-shadow: none;
+      transition: all 0.5s ease;
+    }
+
+    .fab-menu a:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    .fab-menu a:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    .fab-menu a:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .fab-menu a:nth-child(3) {
+      transition-delay: 0.15s;
+    }
+
+    /* Parallax */
+    .parallax {
+      background: url("./images/parallax-bg.jpg") no-repeat center/cover;
+      background-attachment: scroll;
+      height: 350px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    body.light-mode .parallax {
+      background: url("./images/parallax-bg-light.jpg") no-repeat center/cover;
+    }
+
+    .parallax-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.2));
+    }
+
+    body.light-mode .parallax-overlay {
+      background: linear-gradient(to bottom,
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.2));
+    }
+
+    .parallax h2 {
+      font-size: 32px;
+      z-index: 2;
+      text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
+    }
+
+    body.light-mode .parallax h2 {
+      color: #2c3e50;
+      text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 768px) {
       .hero-content h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
-        text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
-        transform: perspective(1000px) rotateX(8deg);
-      }
-
-      body.light-mode .hero-content h1 {
-        text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
+        font-size: 32px;
       }
 
       .hero-content p {
-        font-size: 20px;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-      }
-
-      body.light-mode .hero-content p {
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      }
-
-      canvas#particles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-
-      /* Slider */
-      .slider {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin: 50px 0;
-        border-radius: 20px;
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-        transform: perspective(1000px);
-      }
-
-      body.light-mode .slider {
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
-      }
-
-      .slides {
-        display: flex;
-        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      }
-
-      .slide {
-        min-width: 100%;
-        height: 300px;
-        position: relative;
-        transform: perspective(1000px) rotateY(0deg);
-        transition: transform 0.5s ease;
-      }
-
-      .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-        transition: transform 0.5s ease, filter 0.5s ease;
-        aspect-ratio: 4/3;
-      }
-
-      .slide:hover img {
-        transform: scale(1.2) rotateY(12deg);
-        filter: brightness(1.3);
-        box-shadow: 0 0 20px rgba(107, 72, 255, 0.6);
-      }
-
-      .buttons {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        padding: 0 15px;
-      }
-
-      .button {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-        border: none;
-        padding: 12px;
-        cursor: pointer;
-        border-radius: 50%;
-        transition: all 0.5s ease;
-        font-size: 20px;
-        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-      }
-
-      .button:hover {
-        transform: scale(1.4) rotate(360deg);
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-      }
-
-      .button:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
-
-      .button:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      /* Sections */
-      section {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 0;
-        position: relative;
-        background: url("./images/section-bg.jpg") no-repeat center/cover;
-        background-attachment: fixed;
-        gap: 50px;
-      }
-
-      body.light-mode section {
-        background: url("./images/section-bg-light.jpg") no-repeat center/cover;
+        font-size: 18px;
       }
 
       .section-title {
-        text-align: center;
-        font-size: 34px;
-        color: #e0e0e0;
-        position: relative;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-      }
-
-      body.light-mode .section-title {
-        color: #2c3e50;
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        width: 100%;
-        max-width: 800px;
-        margin: 30px 0;
-      }
-
-      .gallery .zoom-container {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
-      }
-
-      body.light-mode .gallery .zoom-container {
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+        font-size: 28px;
       }
 
       .gallery img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 15px;
-        transition: all 0.5s ease;
-        aspect-ratio: 4/3;
-      }
-
-      .gallery .zoom-container::after {
-        content: attr(data-title);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-        color: white;
-        font-size: 14px;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(100%);
-        transition: all 0.5s ease;
-      }
-
-      body.light-mode .gallery .zoom-container::after {
-        background: linear-gradient(
-          to top,
-          rgba(255, 255, 255, 0.9),
-          transparent
-        );
-        color: #2c3e50;
-      }
-
-      .gallery .zoom-container:hover::after {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .gallery .zoom-container:hover img {
-        transform: scale(1.25) rotate(4deg);
-        filter: brightness(1.2);
-      }
-
-      .gallery .zoom-container:hover {
-        box-shadow: 0 0 25px rgba(107, 72, 255, 0.7);
-      }
-
-      .section-link {
-        display: inline-block;
-        padding: 12px 30px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        text-decoration: none;
-        border-radius: 10px;
-        transition: all 0.5s ease;
-        font-weight: 600;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      .section-link span {
-        color: #fafafa;
-        position: relative;
-        z-index: 2;
-      }
-
-      .section-link::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, #00ddeb, #6b48ff);
-        transition: left 0.5s ease;
-        z-index: 1;
-      }
-
-      .section-link:hover::before {
-        left: 0;
-      }
-
-      .section-link:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .section-link:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
-
-      .section-link:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      /* Modal */
-      #modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-        transition: opacity 0.5s ease;
-      }
-
-      body.light-mode #modal {
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      #modal img {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 15px;
-        transform: scale(1);
-        transition: transform 0.5s ease;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
-      }
-
-      body.light-mode #modal img {
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
-      }
-
-      #close {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        font-size: 35px;
-        color: white;
-        cursor: pointer;
-        transition: all 0.5s ease;
-      }
-
-      body.light-mode #close {
-        color: #2c3e50;
-      }
-
-      .modal-active img {
-        transform: scale(1.2);
-      }
-
-      #close:hover {
-        color: #6b48ff;
-        transform: rotateY(360deg) scale(1.4);
-      }
-
-      #close:active {
-        transform: scale(0.95);
-        transition: all 0.5s ease;
-      }
-
-      /* Info Section */
-      .info__container {
-        text-align: center;
-        background: rgba(30, 30, 30, 0.95);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
-        transition: all 0.5s ease;
-        transform: perspective(1000px);
-        width: 100%;
-        max-width: 800px;
-      }
-
-      body.light-mode .info__container {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+        height: 180px;
       }
 
       .info__container iframe {
-        width: 100%;
-        height: 250px;
-        border-radius: 15px;
-        margin-bottom: 30px;
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+        height: 200px;
       }
 
-      body.light-mode .info__container iframe {
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+      .gallery {
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 28px;
       }
 
-      .info__container p {
+      .hero-content p {
         font-size: 16px;
-        color: #b0b0b0;
-        margin-bottom: 25px;
-        line-height: 1.8;
-        font-weight: 400;
       }
 
-      body.light-mode .info__container p {
-        color: #34495e;
+      .section-title {
+        font-size: 24px;
       }
 
-      .info__container h3 {
-        font-size: 19px;
-        color: #e0e0e0;
-        margin-bottom: 15px;
-        font-weight: 600;
+      .gallery img {
+        height: 150px;
       }
 
-      body.light-mode .info__container h3 {
-        color: #2c3e50;
+      .info__container {
+        padding: 20px;
       }
 
-      .bepul {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
+      .gallery {
+        max-width: 100%;
       }
 
-      .tel {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 18px;
-        display: inline-block;
-        margin: 10px 0;
-        transition: all 0.5s ease;
-        position: relative;
-      }
-
-      body.light-mode .tel {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .tel::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        bottom: -2px;
-        left: 0;
-        transition: width 0.5s ease;
-      }
-
-      .tel:hover::after {
-        width: 100%;
-      }
-
-      .tel:hover {
-        transform: translateY(-2px);
-      }
-
-      .tel:active {
-        transform: scale(0.95);
-        transition: all 0.5s ease;
-      }
-
-      .tel:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      /* Footer */
-      footer {
-        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-        color: white;
-        padding: 80px 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      body.light-mode footer {
-        background: linear-gradient(135deg, #d9e2ec, #f0f4f8);
-      }
-
-      .footer__title {
-        font-size: 32px;
-        margin-bottom: 40px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .footer-icon {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-      }
-
-      .footer-icon a {
-        color: white;
-        font-size: 30px;
-        transition: all 0.5s ease;
-        position: relative;
-      }
-
-      body.light-mode .footer-icon a {
-        color: #2c3e50;
-      }
-
-      .footer-icon a::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #6b48ff;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        opacity: 0;
-        transition: all 0.5s ease;
-      }
-
-      body.light-mode .footer-icon a::after {
-        background: #2c3e50;
-        color: white;
-      }
-
-      .footer-icon a:hover::after {
-        opacity: 1;
-        bottom: -40px;
-      }
-
-      .footer-icon a:hover {
-        color: #00ddeb;
-        transform: translateY(-5px) rotateY(360deg);
-      }
-
-      .footer-icon a:active {
-        transform: scale(0.95);
-        transition: all 0.5s ease;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .footer-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 12px 25px;
-        border-radius: 10px;
-        transition: all 0.5s ease;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      body.light-mode .footer-links a {
-        color: #2c3e50;
-      }
-
-      .footer-links a span {
-        position: relative;
-        z-index: 2;
-      }
-
-      .footer-links a::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        transition: left 0.5s ease;
-        z-index: 1;
-      }
-
-      .footer-links a:hover::before {
-        left: 0;
-      }
-
-      .footer-links a:hover {
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-      }
-
-      .footer-links a:active {
-        transform: scale(0.95);
-        transition: all 0.5s ease;
-      }
-
-      .footer-links a:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      .footer-info {
-        margin-top: 30px;
-        font-size: 14px;
-      }
-
-      .footer-info p {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      body.light-mode .footer-info p {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      /* Dark Mode Toggle */
-      .mode-toggle {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 1000;
-        transition: all 0.5s ease;
-        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-      }
-
-      body.light-mode .mode-toggle {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-      }
-
-      .mode-toggle:hover {
-        transform: rotateY(360deg) scale(1.2);
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .mode-toggle:active {
-        transform: scale(0.95);
-        transition: all 0.5s ease;
-      }
-
-      .mode-toggle:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      .mode-toggle i {
-        transition: transform 0.5s ease;
-      }
-
-      body.light-mode .mode-toggle i {
-        transform: rotateY(360deg);
-      }
-
-      /* Scroll Buttons */
       .scroll-top,
       .scroll-prev,
+      .scroll-next,
+      .fab,
+      .mode-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+
       .scroll-next {
-        position: fixed;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        cursor: pointer;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 1000;
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
-      }
-
-      body.light-mode .scroll-top,
-      body.light-mode .scroll-prev,
-      body.light-mode .scroll-next {
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .scroll-top {
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-      }
-
-      body.light-mode .scroll-top {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
+        right: 80px;
       }
 
       .scroll-prev {
-        bottom: 90px;
-        right: 90px;
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-        color: white;
+        right: 80px;
       }
 
-      body.light-mode .scroll-prev {
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-      }
-
-      .scroll-next {
-        bottom: 20px;
-        right: 90px;
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-        color: white;
-      }
-
-      body.light-mode .scroll-next {
-        background: linear-gradient(45deg, #ff2e63, #00ddeb);
-      }
-
-      .scroll-top:hover,
-      .scroll-prev:hover,
-      .scroll-next:hover {
-        transform: translateY(-5px) scale(1.2);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .scroll-top:active,
-      .scroll-prev:active,
-      .scroll-next:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
-
-      .scroll-top:focus,
-      .scroll-prev:focus,
-      .scroll-next:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      /* Floating Action Button */
-      .fab {
-        position: fixed;
-        bottom: 90px;
-        right: 20px;
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        cursor: pointer;
-        z-index: 1000;
-        transition: all 0.5s ease;
-        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
-      }
-
-      body.light-mode .fab {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-      }
-
-      .fab:hover {
-        transform: rotateY(360deg) scale(1.2);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .fab:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
-
-      .fab:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      .fab-menu {
-        position: fixed;
-        bottom: 160px;
-        right: 20px;
+      footer {
+        padding: 0;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        gap: 25px;
-        z-index: 1000;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease;
-        pointer-events: none;
-      }
-
-      .fab-menu.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-
-      .fab-menu a {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-        color: white;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        display: flex;
+        justify-content: space-evenly;
         align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.5s ease;
-        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
       }
+    }
+  </style>
+</head>
 
-      body.light-mode .fab-menu a {
-        background: linear-gradient(45deg, #6b48ff, #00ddeb);
-      }
-
-      .fab-menu a:hover {
-        transform: scale(1.2) rotate(360deg);
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-      }
-
-      .fab-menu a:active {
-        transform: scale(0.95);
-        box-shadow: none;
-        transition: all 0.5s ease;
-      }
-
-      .fab-menu a:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      .fab-menu a:nth-child(1) {
-        transition-delay: 0.05s;
-      }
-
-      .fab-menu a:nth-child(2) {
-        transition-delay: 0.1s;
-      }
-
-      .fab-menu a:nth-child(3) {
-        transition-delay: 0.15s;
-      }
-
-      /* Parallax */
-      .parallax {
-        background: url("./images/parallax-bg.jpg") no-repeat center/cover;
-        background-attachment: scroll;
-        height: 350px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        margin: 50px 0;
-      }
-
-      body.light-mode .parallax {
-        background: url("./images/parallax-bg-light.jpg") no-repeat center/cover;
-      }
-
-      .parallax-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.2)
-        );
-      }
-
-      body.light-mode .parallax-overlay {
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.5),
-          rgba(255, 255, 255, 0.2)
-        );
-      }
-
-      .parallax h2 {
-        font-size: 32px;
-        z-index: 2;
-        text-shadow: 0 0 15px #6b48ff, 0 0 25px #00ddeb;
-      }
-
-      body.light-mode .parallax h2 {
-        color: #2c3e50;
-        text-shadow: 0 0 10px rgba(107, 72, 255, 0.5);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1200px) {
-        .gallery {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 600px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero-content h1 {
-          font-size: 32px;
-        }
-
-        .hero-content p {
-          font-size: 18px;
-        }
-
-        .section-title {
-          font-size: 28px;
-        }
-
-        .gallery img {
-          height: 180px;
-        }
-
-        .info__container iframe {
-          height: 200px;
-        }
-
-        .gallery {
-          max-width: 500px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-content h1 {
-          font-size: 28px;
-        }
-
-        .hero-content p {
-          font-size: 16px;
-        }
-
-        .section-title {
-          font-size: 24px;
-        }
-
-        .gallery img {
-          height: 150px;
-        }
-
-        .info__container {
-          padding: 20px;
-        }
-
-        .gallery {
-          max-width: 100%;
-        }
-
-        .scroll-top,
-        .scroll-prev,
-        .scroll-next,
-        .fab,
-        .mode-toggle {
-          width: 45px;
-          height: 45px;
-          font-size: 20px;
-        }
-
-        .scroll-next {
-          right: 80px;
-        }
-
-        .scroll-prev {
-          right: 80px;
-        }
-
-        footer {
-          padding: 0;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-        }
-      }
-    </style>
-  </head>
-
-  <body class="dark-mode">
-    <div class="progress-bar"></div>
-    <input type="checkbox" id="menu" class="mobile_input" />
-    <header>
-      <div class="container header-content">
-        <div class="logo__section" onclick="scrollToTop()">
-          <svg
-            class="logo"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <defs>
-              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop
-                  offset="0%"
-                  style="stop-color: #6b48ff; stop-opacity: 1"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color: #00ddeb; stop-opacity: 1"
-                />
-              </linearGradient>
-            </defs>
-            <path
-              d="M20 20 L40 20 A20 20 0 0 1 60 40 L60 80 L40 80 A20 20 0 0 0 20 60 Z M60 20 L80 20 L80 80 L60 60 Z"
-              fill="url(#grad)"
-            />
-          </svg>
-          <h1 class="logo__title">Fatx <span>Mebel</span></h1>
-        </div>
-        <label for="menu">
-          <div class="hm-line"></div>
-          <div class="hm-line"></div>
-          <div class="hm-line"></div>
-        </label>
-        <nav class="nav1">
-          <a href="#info" class="header-links">Biz haqimizda</a>
-          <a href="#dahliz" class="header-links">Dahliz jihozlari</a>
-          <a href="#oshxona" class="header-links">Oshxona jihozlari</a>
-          <a href="#yotoqxona" class="header-links">Yotoqxona jihozlari</a>
-          <a href="#garnitur" class="header-links">Yotoqxona garniturlari</a>
-          <a href="#stolcha" class="header-links">Dekorativ stolchalar</a>
-          <a href="#oyna" class="header-links">Kosmetika oynalari</a>
-          <a href="#shkaf" class="header-links">Shkaf va javonlar</a>
-        </nav>
+<body class="dark-mode">
+  <div class="progress-bar"></div>
+  <input type="checkbox" id="menu" class="mobile_input" />
+  <header>
+    <div class="container header-content">
+      <div class="logo__section" onclick="scrollToTop()">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color: #6b48ff; stop-opacity: 1" />
+              <stop offset="100%" style="stop-color: #00ddeb; stop-opacity: 1" />
+            </linearGradient>
+          </defs>
+          <path d="M20 20 L40 20 A20 20 0 0 1 60 40 L60 80 L40 80 A20 20 0 0 0 20 60 Z M60 20 L80 20 L80 80 L60 60 Z"
+            fill="url(#grad)" />
+        </svg>
+        <h1 class="logo__title">Fatx <span>Mebel</span></h1>
       </div>
-    </header>
+      <label for="menu">
+        <div class="hm-line"></div>
+        <div class="hm-line"></div>
+        <div class="hm-line"></div>
+      </label>
+      <nav class="nav1">
+        <a href="#info" class="header-links">Biz haqimizda</a>
+        <a href="#dahliz" class="header-links">Dahliz jihozlari</a>
+        <a href="#oshxona" class="header-links">Oshxona jihozlari</a>
+        <a href="#yotoqxona" class="header-links">Yotoqxona jihozlari</a>
+        <a href="#garnitur" class="header-links">Yotoqxona garniturlari</a>
+        <a href="#stolcha" class="header-links">Dekorativ stolchalar</a>
+        <a href="#oyna" class="header-links">Kosmetika oynalari</a>
+        <a href="#shkaf" class="header-links">Shkaf va javonlar</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-overlay"></div>
-        <canvas id="particles"></canvas>
-        <div class="hero-content">
-          <h1>Futuristik Mebel Dunyosi</h1>
-          <p>Har bir xonadon uchun noyob va zamonaviy dizaynlar!</p>
-        </div>
-      </section>
-
-      <section class="slider-section">
-        <div class="container">
-          <div class="slider">
-            <div class="slides">
-              <div class="slide">
-                <div class="zoom-container">
-                  <img
-                    src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
-                    alt="Zamonaviy dahliz mebeli"
-                  />
-                </div>
-              </div>
-              <div class="slide">
-                <div class="zoom-container">
-                  <img
-                    src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
-                    alt="Kosmetika oynasi"
-                  />
-                </div>
-              </div>
-              <div class="slide">
-                <div class="zoom-container">
-                  <img
-                    src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
-                    alt="Oshxona mebeli"
-                  />
-                </div>
-              </div>
-              <div class="slide">
-                <div class="zoom-container">
-                  <img
-                    src="./shkaf/photo_8_2025-02-13_16-19-16.jpg"
-                    alt="Shkaf"
-                  />
-                </div>
-              </div>
-              <div class="slide">
-                <div class="zoom-container">
-                  <img
-                    src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
-                    alt="Yotoqxona mebeli"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="buttons">
-              <button
-                class="button prev fas fa-chevron-left"
-                aria-label="Oldingi slayd"
-              ></button>
-              <button
-                class="button next fas fa-chevron-right"
-                aria-label="Keyingi slayd"
-              ></button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="parallax">
-        <div class="parallax-overlay"></div>
-        <h2>Nafislik va sifat bir joyda!</h2>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <canvas id="particles"></canvas>
+      <div class="hero-content">
+        <h1>Futuristik Mebel Dunyosi</h1>
+        <p>Har bir xonadon uchun noyob va zamonaviy dizaynlar!</p>
       </div>
+    </section>
 
-      <section class="info" id="info">
-        <div class="container info__container">
-          <h2 class="section-title">Biz haqimizda</h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            class="joylashuv"
-            aria-label="Fatx Mebel manzili xaritasi"
-          ></iframe>
-          <p>
-            Bizning mebellar sizning ehtiyojlaringiz asosida maxsus
-            tayyorlanadi. Har bir mahsulot o‘ziga xos dizayn, yuqori sifat va
-            mukammal ishlov berish bilan ajralib turadi.
-          </p>
-          <h3>Manzil: Andijon viloyati, Navoiy bog'i orqasi</h3>
-          <h3>
-            Yetkazib berish Andijon bo'ylab <span class="bepul">BEPUL</span>
-          </h3>
-          <h3>Murojaat uchun:</h3>
-          <a href="tel:+998334794842" class="tel">+998 33 479 48 42</a><br />
-          <a href="tel:+998940794842" class="tel">+998 94 079 48 42</a>
-        </div>
-      </section>
-
-      <section class="dahliz-section" id="dahliz">
-        <div class="container">
-          <h2 class="section-title">Dahliz jihozlari</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./dahliz/photo_1_2025-02-13_16-12-17.jpg"
-                alt="Zamonaviy dahliz mebeli 1"
-                onclick="openModal(this)"
-              />
+    <section class="slider-section">
+      <div class="container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <div class="zoom-container">
+                <img src="./dahliz/photo_10_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli" />
+              </div>
             </div>
-            <div class="zoom-container">
-              <img
-                src="./dahliz/photo_2_2025-02-13_16-12-17.jpg"
-                alt="Zamonaviy dahliz mebeli 2"
-                onclick="openModal(this)"
-              />
+            <div class="slide">
+              <div class="zoom-container">
+                <img src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi" />
+              </div>
             </div>
-            <div class="zoom-container">
-              <img
-                src="./dahliz/photo_10_2025-02-13_16-12-17.jpg"
-                alt="Zamonaviy dahliz mebeli 3"
-                onclick="openModal(this)"
-              />
+            <div class="slide">
+              <div class="zoom-container">
+                <img src="./oshxona/photo_4_2025-02-13_16-20-25.jpg" alt="Oshxona mebeli" />
+              </div>
             </div>
-            <div class="zoom-container">
-              <img
-                src=""
-                alt="Zamonaviy dahliz mebeli 4"
-                onclick="openModal(this)"
-              />
+            <div class="slide">
+              <div class="zoom-container">
+                <img src="./shkaf/photo_8_2025-02-13_16-19-16.jpg" alt="Shkaf" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="zoom-container">
+                <img src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli" />
+              </div>
             </div>
           </div>
-          <a href="./html/dahliz.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="oshxona-section" id="oshxona">
-        <div class="container">
-          <h2 class="section-title">Oshxona jihozlari</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./oshxona/photo_4_2025-02-13_16-20-25.jpg"
-                alt="Oshxona mebeli 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./oshxona/photo_2_2025-02-13_16-20-25.jpg"
-                alt="Oshxona mebeli 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./oshxona/photo_2_2025-02-13_16-24-48.jpg"
-                alt="Oshxona mebeli 3"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Oshxona mebeli 4" onclick="openModal(this)" />
-            </div>
+          <div class="buttons">
+            <button class="button prev fas fa-chevron-left" aria-label="Oldingi slayd"></button>
+            <button class="button next fas fa-chevron-right" aria-label="Keyingi slayd"></button>
           </div>
-          <a href="./html/oshxona.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="yotoqxona-section" id="yotoqxona">
-        <div class="container">
-          <h2 class="section-title">Yotoqxona jihozlari</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg"
-                alt="Yotoqxona mebeli 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg"
-                alt="Yotoqxona mebeli 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg"
-                alt="Yotoqxona mebeli 3"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Yotoqxona mebeli 4" onclick="openModal(this)" />
-            </div>
-          </div>
-          <a href="./html/yotoqxona.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="garnitur-section" id="garnitur">
-        <div class="container">
-          <h2 class="section-title">Yotoqxona garniturlari</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg"
-                alt="Yotoqxona garnituri 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg"
-                alt="Yotoqxona garnituri 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg"
-                alt="Yotoqxona garnituri 3"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src=""
-                alt="Yotoqxona garnituri 4"
-                onclick="openModal(this)"
-              />
-            </div>
-          </div>
-          <a href="./html/garnitur.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="stolchalar-section" id="stolcha">
-        <div class="container">
-          <h2 class="section-title">Dekorativ stolchalar</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg"
-                alt="Dekorativ stolcha 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg"
-                alt="Dekorativ stolcha 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Dekorativ stolcha 3" onclick="openModal(this)" />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Dekorativ stolcha 4" onclick="openModal(this)" />
-            </div>
-          </div>
-          <a href="./html/stollar.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="oynalar-section" id="oyna">
-        <div class="container">
-          <h2 class="section-title">Kosmetika oynalari</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg"
-                alt="Kosmetika oynasi 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg"
-                alt="Kosmetika oynasi 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg"
-                alt="Kosmetika oynasi 3"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Kosmetika oynasi 4" onclick="openModal(this)" />
-            </div>
-          </div>
-          <a href="./html/oynalar.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-
-      <section class="shkaflar-section" id="shkaf">
-        <div class="container">
-          <h2 class="section-title">Shkaf va javonlar</h2>
-          <div class="gallery">
-            <div class="zoom-container">
-              <img
-                src="./shkaf/photo_1_2025-02-13_16-19-16.jpg"
-                alt="Shkaf 1"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./shkaf/photo_2_2025-02-13_16-23-44.jpg"
-                alt="Shkaf 2"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img
-                src="./shkaf/photo_8_2025-02-13_16-23-44.jpg"
-                alt="Shkaf 3"
-                onclick="openModal(this)"
-              />
-            </div>
-            <div class="zoom-container">
-              <img src="" alt="Shkaf 4" onclick="openModal(this)" />
-            </div>
-          </div>
-          <a href="./html/shkaf.html" class="section-link"
-            ><span>Barchasini ko'rish</span></a
-          >
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-content">
-        <h2 class="footer__title">Fatx Mebel</h2>
-        <div class="footer-icon">
-          <a href="tel:+998334794842" data-tooltip="Birinchi raqam"
-            ><i class="fas fa-phone"></i
-          ></a>
-          <a href="tel:+998940794842" data-tooltip="Ikkinchi raqam"
-            ><i class="fas fa-phone"></i
-          ></a>
-        </div>
-        <div class="footer-links">
-          <a href="#header"><span>Bosh sahifa</span></a>
-          <a href="./html/barchasi.html" target="_blank"
-            ><span>Barcha mebellar</span></a
-          >
-          <a href="#info"><span>Biz hajmizda</span></a>
-          <a href="https://t.me/Fatx_mebel"
-            ><span>Biz bilan bog'lanish</span></a
-          >
-        </div>
-        <div class="footer-info">
-          <p>© 2025 Fatx Mebel. Barcha huquqlar himoyalangan.</p>
-          <p>Manzil: Andijon viloyati, Navoiy bog'i orqasi</p>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <div id="modal" onclick="closeModal(event)">
-      <span id="close" aria-label="Modalni yopish">×</span>
-      <img id="modal-img" alt="Kattalashtirilgan rasm" />
+    <div class="parallax">
+      <div class="parallax-overlay"></div>
+      <h2>Nafislik va sifat bir joyda!</h2>
     </div>
 
-    <div
-      class="mode-toggle"
-      onclick="toggleDarkMode()"
-      aria-label="Tungi/kunduzgi rejimni almashtirish"
-    >
-      <i class="fas fa-sun"></i>
-    </div>
+    <section class="info" id="info">
+      <div class="container info__container">
+        <h2 class="section-title">Biz haqimizda</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3020.867364178352!2d72.356195!3d40.78692999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ3JzEzLjAiTiA3MsKwMjEnMjIuMyJF!5e0!3m2!1sru!2s!4v1739447271234!5m2!1sru!2s"
+          style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          class="joylashuv" aria-label="Fatx Mebel manzili xaritasi"></iframe>
+        <p>
+          Bizning mebellar sizning ehtiyojlaringiz asosida maxsus
+          tayyorlanadi. Har bir mahsulot o‘ziga xos dizayn, yuqori sifat va
+          mukammal ishlov berish bilan ajralib turadi.
+        </p>
+        <h3>Manzil: Andijon viloyati, Navoiy bog'i orqasi</h3>
+        <h3>
+          Yetkazib berish Andijon bo'ylab <span class="bepul">BEPUL</span>
+        </h3>
+        <h3>Murojaat uchun:</h3>
+        <a href="tel:+998334794842" class="tel">+998 33 479 48 42</a><br />
+        <a href="tel:+998940794842" class="tel">+998 94 079 48 42</a>
+      </div>
+    </section>
 
-    <div
-      class="scroll-top"
-      onclick="scrollToTop()"
-      aria-label="Yuqoriga ko'tarilish"
-    >
-      <i class="fas fa-chevron-up"></i>
-    </div>
+    <section class="dahliz-section" id="dahliz">
+      <div class="container">
+        <h2 class="section-title">Dahliz jihozlari</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./dahliz/photo_1_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 1"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./dahliz/photo_2_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 2"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./dahliz/photo_10_2025-02-13_16-12-17.jpg" alt="Zamonaviy dahliz mebeli 3"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Zamonaviy dahliz mebeli 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/dahliz.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
 
-    <div
-      class="scroll-prev"
-      onclick="scrollToPrevSection()"
-      aria-label="Oldingi bo'limga o'tish"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </div>
+    <section class="oshxona-section" id="oshxona">
+      <div class="container">
+        <h2 class="section-title">Oshxona jihozlari</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./oshxona/photo_4_2025-02-13_16-20-25.jpg" alt="Oshxona mebeli 1" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./oshxona/photo_2_2025-02-13_16-20-25.jpg" alt="Oshxona mebeli 2" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./oshxona/photo_2_2025-02-13_16-24-48.jpg" alt="Oshxona mebeli 3" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Oshxona mebeli 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/oshxona.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
 
-    <div
-      class="scroll-next"
-      onclick="scrollToNextSection()"
-      aria-label="Keyingi bo'limga o'tish"
-    >
-      <i class="fas fa-arrow-down"></i>
-    </div>
+    <section class="yotoqxona-section" id="yotoqxona">
+      <div class="container">
+        <h2 class="section-title">Yotoqxona jihozlari</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./yotoqxona/photo_1_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 1" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./yotoqxona/photo_2_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 2" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./yotoqxona/photo_5_2025-02-13_16-21-36.jpg" alt="Yotoqxona mebeli 3" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Yotoqxona mebeli 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/yotoqxona.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
 
-    <div class="fab" onclick="toggleFabMenu()" aria-label="Qo'shimcha menyu">
-      <i class="fas fa-plus"></i>
-    </div>
-    <div class="fab-menu">
-      <a
-        href="tel:+998334794842"
-        aria-label="Birinchi raqamga qo'ng'iroq qilish"
-        ><i class="fas fa-phone"></i
-      ></a>
-      <a
-        href="tel:+998940794842"
-        aria-label="Ikkinchi raqamga qo'ng'iroq qilish"
-        ><i class="fas fa-phone"></i
-      ></a>
-      <a href="https://t.me/Fatx_mebel" aria-label="Telegram orqali bog'lanish"
-        ><i class="fab fa-telegram"></i
-      ></a>
-    </div>
-    <script>
-      const $ = (selector, context = document) =>
-        context.querySelector(selector);
-      const $$ = (selector, context = document) =>
-        Array.from(context.querySelectorAll(selector));
+    <section class="garnitur-section" id="garnitur">
+      <div class="container">
+        <h2 class="section-title">Yotoqxona garniturlari</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./yotoqxona garnituri/photo_6_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 1"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./yotoqxona garnituri/photo_18_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 2"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./yotoqxona garnituri/photo_9_2025-02-13_16-30-44.jpg" alt="Yotoqxona garnituri 3"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Yotoqxona garnituri 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/garnitur.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
 
-      // Hamburger Menu Link Click to Close
-      $$(".header-links").forEach((link) => {
-        link.addEventListener("click", () => {
-          $("#menu").checked = false;
-          document.body.style.overflow = "";
-        });
+    <section class="stolchalar-section" id="stolcha">
+      <div class="container">
+        <h2 class="section-title">Dekorativ stolchalar</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./dekorativ stolchalar/photo_2_2025-02-13_16-27-53.jpg" alt="Dekorativ stolcha 1"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./dekorativ stolchalar/photo_5_2025-02-13_16-27-53.jpg" alt="Dekorativ stolcha 2"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Dekorativ stolcha 3" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Dekorativ stolcha 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/stollar.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
+
+    <section class="oynalar-section" id="oyna">
+      <div class="container">
+        <h2 class="section-title">Kosmetika oynalari</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./kosmetik oyna/photo_10_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 1"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./kosmetik oyna/photo_6_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 2"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./kosmetik oyna/photo_5_2025-02-13_16-29-45.jpg" alt="Kosmetika oynasi 3"
+              onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Kosmetika oynasi 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/oynalar.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
+
+    <section class="shkaflar-section" id="shkaf">
+      <div class="container">
+        <h2 class="section-title">Shkaf va javonlar</h2>
+        <div class="gallery">
+          <div class="zoom-container">
+            <img src="./shkaf/photo_1_2025-02-13_16-19-16.jpg" alt="Shkaf 1" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./shkaf/photo_2_2025-02-13_16-23-44.jpg" alt="Shkaf 2" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="./shkaf/photo_8_2025-02-13_16-23-44.jpg" alt="Shkaf 3" onclick="openModal(this)" />
+          </div>
+          <div class="zoom-container">
+            <img src="" alt="Shkaf 4" onclick="openModal(this)" />
+          </div>
+        </div>
+        <a href="./html/shkaf.html" class="section-link"><span>Barchasini ko'rish</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <h2 class="footer__title">Fatx Mebel</h2>
+      <div class="footer-icon">
+        <a href="tel:+998334794842" data-tooltip="Birinchi raqam"><i class="fas fa-phone"></i></a>
+        <a href="tel:+998940794842" data-tooltip="Ikkinchi raqam"><i class="fas fa-phone"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#header"><span>Bosh sahifa</span></a>
+        <a href="./html/barchasi.html" target="_blank"><span>Barcha mebellar</span></a>
+        <a href="#info"><span>Biz hajmizda</span></a>
+        <a href="https://t.me/Fatx_mebel"><span>Biz bilan bog'lanish</span></a>
+      </div>
+      <div class="footer-info">
+        <p>© 2025 Fatx Mebel. Barcha huquqlar himoyalangan.</p>
+        <p>Manzil: Andijon viloyati, Navoiy bog'i orqasi</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal" onclick="closeModal(event)">
+    <span id="close" aria-label="Modalni yopish">×</span>
+    <img id="modal-img" alt="Kattalashtirilgan rasm" />
+  </div>
+
+  <div class="mode-toggle" onclick="toggleDarkMode()" aria-label="Tungi/kunduzgi rejimni almashtirish">
+    <i class="fas fa-sun"></i>
+  </div>
+
+  <div class="scroll-top" onclick="scrollToTop()" aria-label="Yuqoriga ko'tarilish">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <div class="scroll-prev" onclick="scrollToPrevSection()" aria-label="Oldingi bo'limga o'tish">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <div class="scroll-next" onclick="scrollToNextSection()" aria-label="Keyingi bo'limga o'tish">
+    <i class="fas fa-arrow-down"></i>
+  </div>
+
+  <div class="fab" onclick="toggleFabMenu()" aria-label="Qo'shimcha menyu">
+    <i class="fas fa-plus"></i>
+  </div>
+  <div class="fab-menu">
+    <a href="tel:+998334794842" aria-label="Birinchi raqamga qo'ng'iroq qilish"><i class="fas fa-phone"></i></a>
+    <a href="tel:+998940794842" aria-label="Ikkinchi raqamga qo'ng'iroq qilish"><i class="fas fa-phone"></i></a>
+    <a href="https://t.me/Fatx_mebel" aria-label="Telegram orqali bog'lanish"><i class="fab fa-telegram"></i></a>
+  </div>
+  <script>
+    const $ = (selector, context = document) =>
+      context.querySelector(selector);
+    const $$ = (selector, context = document) =>
+      Array.from(context.querySelectorAll(selector));
+
+    // Hamburger Menu Link Click to Close
+    $$(".header-links").forEach((link) => {
+      link.addEventListener("click", () => {
+        $("#menu").checked = false;
+        document.body.style.overflow = "";
       });
+    });
 
-      // Hamburger Menu Scroll Lock
-      $("#menu").addEventListener("change", () => {
-        document.body.style.overflow = $("#menu").checked ? "hidden" : "";
-      });
+    // Hamburger Menu Scroll Lock
+    $("#menu").addEventListener("change", () => {
+      document.body.style.overflow = $("#menu").checked ? "hidden" : "";
+    });
 
-      // Particles Animation
-      document.addEventListener("DOMContentLoaded", () => {
-        // Particles
-        const canvas = document.getElementById("particles");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let particlesArray = [];
+    // Particles Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      // Particles
+      const canvas = document.getElementById("particles");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      let particlesArray = [];
 
-        class Particle {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 5 + 1;
-            this.speedX = Math.random() * 3 - 1.5;
-            this.speedY = Math.random() * 3 - 1.5;
-            this.color = `hsl(${Math.random() * 360}, 70%, 50%)`;
-          }
-          update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.size > 0.2) this.size -= 0.1;
-            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-          }
-          draw() {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-          }
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 5 + 1;
+          this.speedX = Math.random() * 3 - 1.5;
+          this.speedY = Math.random() * 3 - 1.5;
+          this.color = `hsl(${Math.random() * 360}, 70%, 50%)`;
         }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.size > 0.2) this.size -= 0.1;
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
 
-        function init() {
-          particlesArray = [];
-          for (let i = 0; i < 100; i++) {
+      function init() {
+        particlesArray = [];
+        for (let i = 0; i < 100; i++) {
+          particlesArray.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach((particle, index) => {
+          particle.update();
+          particle.draw();
+          if (particle.size <= 0.2) {
+            particlesArray.splice(index, 1);
             particlesArray.push(new Particle());
           }
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          particlesArray.forEach((particle, index) => {
-            particle.update();
-            particle.draw();
-            if (particle.size <= 0.2) {
-              particlesArray.splice(index, 1);
-              particlesArray.push(new Particle());
-            }
-          });
-          requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        window.addEventListener("resize", () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          init();
         });
-      });
-
-      // Slider
-      let currentSlide = 0;
-      const slides = $$(".slide");
-      const totalSlides = slides.length;
-
-      function updateSlider() {
-        $(".slides").style.transform = `translateX(-${currentSlide * 100}%)`;
+        requestAnimationFrame(animate);
       }
 
-      $(".next").addEventListener("click", () => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
+      init();
+      animate();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init();
       });
+    });
 
-      $(".prev").addEventListener("click", () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
-      });
+    // Slider
+    let currentSlide = 0;
+    const slides = $$(".slide");
+    const totalSlides = slides.length;
 
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
-      }, 5000);
+    function updateSlider() {
+      $(".slides").style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 
-      // Modal
-      function openModal(img) {
-        $("#modal").style.display = "flex";
-        $("#modal-img").src = img.src;
-        $("#modal-img").alt = img.alt;
-        setTimeout(() => $("#modal-img").classList.add("modal-active"), 100);
+    $(".next").addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    });
+
+    $(".prev").addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }, 5000);
+
+    // Modal
+    function openModal(img) {
+      $("#modal").style.display = "flex";
+      $("#modal-img").src = img.src;
+      $("#modal-img").alt = img.alt;
+      setTimeout(() => $("#modal-img").classList.add("modal-active"), 100);
+    }
+
+    function closeModal(event) {
+      if (event.target === $("#modal") || event.target === $("#close")) {
+        $("#modal-img").classList.remove("modal-active");
+        setTimeout(() => ($("#modal").style.display = "none"), 400);
       }
+    }
 
-      function closeModal(event) {
-        if (event.target === $("#modal") || event.target === $("#close")) {
-          $("#modal-img").classList.remove("modal-active");
-          setTimeout(() => ($("#modal").style.display = "none"), 400);
+    // Progress Bar
+    window.addEventListener(
+      "scroll",
+      () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        $(".progress-bar").style.width = `${scrollPercentage}%`;
+      },
+      { passive: true }
+    );
+
+    // Scroll to Top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Scroll to Previous/Next Section
+    const sections = $$("section, footer");
+    function scrollToPrevSection() {
+      const scrollY = window.scrollY;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop < scrollY - 50) {
+          window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
+          break;
         }
       }
+    }
 
-      // Progress Bar
-      window.addEventListener(
-        "scroll",
-        () => {
-          const scrollTop =
-            document.documentElement.scrollTop || document.body.scrollTop;
-          const scrollHeight =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-          const scrollPercentage = (scrollTop / scrollHeight) * 100;
-          $(".progress-bar").style.width = `${scrollPercentage}%`;
-        },
-        { passive: true }
-      );
-
-      // Scroll to Top
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      // Scroll to Previous/Next Section
-      const sections = $$("section, footer");
-      function scrollToPrevSection() {
-        const scrollY = window.scrollY;
-        for (let i = sections.length - 1; i >= 0; i--) {
-          if (sections[i].offsetTop < scrollY - 50) {
-            window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
-            break;
-          }
+    function scrollToNextSection() {
+      const scrollY = window.scrollY;
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].offsetTop > scrollY + 50) {
+          window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
+          break;
         }
       }
+    }
 
-      function scrollToNextSection() {
-        const scrollY = window.scrollY;
-        for (let i = 0; i < sections.length; i++) {
-          if (sections[i].offsetTop > scrollY + 50) {
-            window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
-            break;
-          }
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+      document.body.classList.add("transitioning");
+      document.body.classList.toggle("light-mode");
+      setTimeout(() => {
+        document.body.classList.remove("transitioning");
+      }, 500);
+      $(".mode-toggle i").classList.toggle("fa-sun");
+      $(".mode-toggle i").classList.toggle("fa-moon");
+    }
+
+    // FAB Menu
+    function toggleFabMenu() {
+      const fabMenu = $(".fab-menu");
+      const isActive = fabMenu.classList.toggle("active");
+      $(".fab i").classList.toggle("fa-plus", !isActive);
+      $(".fab i").classList.toggle("fa-times", isActive);
+    }
+
+    // Close FAB on Scroll
+    window.addEventListener(
+      "scroll",
+      () => {
+        if ($(".fab-menu").classList.contains("active")) {
+          toggleFabMenu();
         }
-      }
+      },
+      { passive: true }
+    );
+  </script>
+</body>
 
-      // Dark Mode Toggle
-      function toggleDarkMode() {
-        document.body.classList.add("transitioning");
-        document.body.classList.toggle("light-mode");
-        setTimeout(() => {
-          document.body.classList.remove("transitioning");
-        }, 500);
-        $(".mode-toggle i").classList.toggle("fa-sun");
-        $(".mode-toggle i").classList.toggle("fa-moon");
-      }
-
-      // FAB Menu
-      function toggleFabMenu() {
-        const fabMenu = $(".fab-menu");
-        const isActive = fabMenu.classList.toggle("active");
-        $(".fab i").classList.toggle("fa-plus", !isActive);
-        $(".fab i").classList.toggle("fa-times", isActive);
-      }
-
-      // Close FAB on Scroll
-      window.addEventListener(
-        "scroll",
-        () => {
-          if ($(".fab-menu").classList.contains("active")) {
-            toggleFabMenu();
-          }
-        },
-        { passive: true }
-      );
-    </script>
-  </body>
 </html>
